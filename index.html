@@ -83,14 +83,27 @@ html{scroll-behavior:smooth}
 .lb img{max-width:92vw;max-height:88vh;border-radius:22px;box-shadow:0 30px 80px rgba(20,30,60,.25);transform:scale(.92);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
 .lb.on img{transform:scale(1)}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.heroimg img,.emb{animation:none}.js .rv{opacity:1;transform:none;transition:none}}
+
+.emb{width:min(300px,68vw)!important;margin-bottom:6px!important}
+@media(max-width:600px){nav .logo img{height:11px!important}}
+/* liquid glass: same white frosted look as the Sonar Katta app */
+.bg{background:radial-gradient(ellipse at 84% 12%,#f7e7bd78 0%,transparent 32%),radial-gradient(ellipse at 12% 64%,#f3dfb36a 0%,transparent 29%),linear-gradient(125deg,#fffefa 0%,#e9e7e3 13%,#fffefa 27%,#f4f0e8 44%,#fff 60%,#e8e7e5 73%,#fffefa 87%,#efebe3 100%)}
+.glass,.chip,.btn.o,.tab,.ctl button,.hint{position:relative;isolation:isolate;overflow:hidden;color:#233540;background:linear-gradient(137deg,#ffffff48 0%,#f6fbff24 29%,#ffffff16 47%,#f7e1ab32 71%,#ffffff4b 100%);border:1px solid #fffef9d9;-webkit-backdrop-filter:blur(24px) saturate(1.55) brightness(1.06);backdrop-filter:blur(24px) saturate(1.55) brightness(1.06);box-shadow:inset 0 2px 2px #fff,inset 1px 0 1px #ffffffce,inset 0 -2px 3px #b6a98a73,0 7px 17px #6d768351,0 0 9px #ffffff80}
+.glass::before,.chip::before,.btn.o::before,.tab::before,.ctl button::before,.hint::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:0;background:linear-gradient(111deg,transparent 5%,#fff8 19%,#ffffffbd 25%,transparent 35%,transparent 60%,#fff9 70%,transparent 82%);opacity:.67}
+.glass>*{position:relative;z-index:1}
+.hint{position:absolute}
+.tab.on{background:#0b0d12;color:#fff;border-color:transparent;box-shadow:none}.tab.on::before{display:none}
+nav{background:linear-gradient(137deg,#ffffff70,#f6fbff40 50%,#ffffff66);border-bottom:1px solid #fffef9d9;-webkit-backdrop-filter:blur(24px) saturate(1.55) brightness(1.06);backdrop-filter:blur(24px) saturate(1.55) brightness(1.06);box-shadow:inset 0 -1px 0 #b6a98a40,0 4px 14px #6d76832e}
+.heroimg{border:1px solid #fffef9d9;box-shadow:inset 0 2px 2px #fff,0 7px 17px #6d768351}
+.stage{box-shadow:inset 0 0 0 1px #ffffffb0}
 </style>
 </head>
 <body>
 <div class="bg"></div>
-<nav><div class="wrap"><div class="logo">SHAGUN <span>EVENTS</span></div><div><a href="#about">About</a><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#view">360 View</a><a href="#contact">Contact</a></div></div></nav>
+<nav><div class="wrap"><div class="logo"><img src="2-logo-word.png" alt="Shagun Events" width="520" height="43" style="height:15px;width:auto;display:block"></div><div><a href="#about">About</a><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#view">360 View</a><a href="#contact">Contact</a></div></div></nav>
 
 <header class="hero wrap">
-  <img class="emb" src="1-logo.png" alt="Shagun Events peacock emblem" width="230" height="222">
+  <img class="emb" src="1-ol-peacock.png" alt="Shagun Events peacock emblem" width="1000" height="838">
   <div class="eyebrow">Shagun Events</div>
   <h1>Creating the <em>&lsquo;WOW&rsquo; factor</em> in every event.</h1>
   <p class="lead">You are not just a client, you are family. We take care of every detail so your guests are in awe and you enjoy every moment.</p>
