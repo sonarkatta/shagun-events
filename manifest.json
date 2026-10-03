@@ -20,9 +20,10 @@
    "id": "garland3d",
    "name": "Garland 3D",
    "count": 36,
-   "sheet": "2-sk-garland-ai4.webp?v=31",
-   "cols": 6,
-   "rows": 6,
+   "sheet": "1-sk-garland-ai6.webp?v=32",
+   "cols": 8,
+   "rows": 5,
+   "aspect": "4/5",
    "ai": true
   }
  ]
