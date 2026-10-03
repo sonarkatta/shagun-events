@@ -41,7 +41,7 @@ section{padding:64px 0}
 .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
 .pk{padding:26px}
 .pk h3{margin:6px 0 2px;font-size:20px;letter-spacing:-.3px}
-.v360{padding:18px}
+.v360{padding:18px}#view{padding-top:76px!important;padding-bottom:20px!important}#view .sh{margin-bottom:14px}#view .sh p{margin-top:6px}#view .stage{max-width:calc((100vh - 380px)*1.3333);max-width:calc((100svh - 380px)*1.3333);min-width:min(100%,300px);margin-left:auto;margin-right:auto}
 .tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
 .tab{border:1px solid var(--line);background:#fff;color:var(--mut);border-radius:99px;padding:8px 18px;font-weight:600;font-size:14px;cursor:pointer}
 .tab.on{background:#0b0d12;color:#fff;border-color:transparent}
@@ -333,7 +333,7 @@ document.getElementById("gal").innerHTML=SITE.gallery.map(function(g,i){var R=["
 document.getElementById("ev").innerHTML=SITE.events.map(function(e){return '<span class="chip">'+e+'</span>'}).join("");
 
 /* ---- 360 viewer: a folder of photos per item, listed in 360/manifest.json ---- */
-var M=null,item=null,imgs=[],pos=0,auto=true,tmr=null,dragging=false,sx=0,sp=0;
+var M=null,item=null,imgs=[],pos=0,auto=true,tmr=null,dragging=false,sx=0,dsp=0;
 var fr=document.getElementById("fr"),st=document.getElementById("stage"),rail=document.getElementById("rail"),hint=document.getElementById("hint"),auBtn=document.getElementById("auto");
 function url(i){return item.files?"360/"+item.id+"/"+item.files[i]:"360/"+item.id+"/"+("0"+(i+1)).slice(-2)+"."+(item.ext||"jpg")}
 var sp=document.getElementById("sp");
@@ -345,8 +345,8 @@ function load(it){item=it;imgs=[];if(it.sheet){var m=new Image();m.src=it.sheet}
 function tick(){clearInterval(tmr);tmr=setInterval(function(){if(auto&&!dragging){pos+=.35;show()}},60)}
 fetch("manifest.json?x="+Date.now()).then(function(r){return r.json()}).then(function(j){M=j;var t=document.getElementById("tabs");t.innerHTML=M.items.map(function(it){return '<button class="tab" data-id="'+it.id+'">'+it.name+'</button>'}).join("");[].forEach.call(t.children,function(b,k){b.onclick=function(){load(M.items[k])}});load(M.items[0]);tick()}).catch(function(){document.getElementById("view").style.display="none"});
 function setAuto(v){auto=v;auBtn.textContent=auto?"Pause":"Auto rotate"}
-st.addEventListener("pointerdown",function(e){dragging=true;sx=e.clientX;sp=pos;st.classList.add("drag");st.setPointerCapture(e.pointerId);hint.style.opacity=0;setAuto(false)});
-st.addEventListener("pointermove",function(e){if(!dragging)return;var w=st.clientWidth;pos=sp-((e.clientX-sx)/w)*item.count*1.2;show()});
+st.addEventListener("pointerdown",function(e){dragging=true;sx=e.clientX;dsp=pos;st.classList.add("drag");st.setPointerCapture(e.pointerId);hint.style.opacity=0;setAuto(false)});
+st.addEventListener("pointermove",function(e){if(!dragging)return;var w=st.clientWidth;pos=dsp-((e.clientX-sx)/w)*item.count*1.2;show()});
 function up(){dragging=false;st.classList.remove("drag")}
 st.addEventListener("pointerup",up);st.addEventListener("pointercancel",up);
 document.getElementById("prev").onclick=function(){setAuto(false);pos-=1;show()};
