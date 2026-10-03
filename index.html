@@ -148,6 +148,14 @@ nav{background:linear-gradient(125deg,rgba(255,255,255,.5),rgba(247,253,255,.4))
 .tab.on::before,.btn.g::before{display:block;content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:-1;background:linear-gradient(160deg,rgba(255,255,255,.42),rgba(255,255,255,.06) 34%,transparent 52%,rgba(255,255,255,.14))}
 /* subtle marble veining behind the page */
 @media (min-width:860px){.phc{-webkit-backdrop-filter:blur(16px) saturate(1.5)!important;backdrop-filter:blur(16px) saturate(1.5)!important;background:linear-gradient(135deg,rgba(255,255,255,.74),rgba(240,247,250,.6))!important;z-index:2}.phc li h3,.phc li p{color:#000!important}}
+/* v10 unmistakable iOS-style glass */
+.glass,.tab,.ctl button,.hint,.btn.o,.chip{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(145deg,rgba(255,255,255,.7) 0%,rgba(196,222,236,.42) 48%,rgba(255,255,255,.58) 100%);border:1.5px solid rgba(255,255,255,.98);-webkit-backdrop-filter:blur(18px) saturate(1.9) brightness(1.04);backdrop-filter:blur(18px) saturate(1.9) brightness(1.04);box-shadow:0 0 0 1px rgba(40,70,95,.22),inset 0 2px 0 #fff,inset 0 -3px 8px rgba(70,120,150,.32),inset 3px 0 6px rgba(255,255,255,.8),inset -3px 0 6px rgba(120,170,200,.25),0 14px 30px rgba(40,70,95,.24),0 2px 5px rgba(40,70,95,.18)}
+.glass::before,.tab::before,.ctl button::before,.hint::before,.btn.o::before,.chip::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:-1;background:linear-gradient(160deg,rgba(255,255,255,.95),rgba(255,255,255,.2) 32%,transparent 52%,rgba(90,150,185,.28))}
+.glass::after,.tab::after,.ctl button::after,.hint::after,.btn.o::after,.chip::after{content:"";position:absolute;top:-30%;bottom:-30%;left:-45%;width:32%;transform:rotate(22deg);pointer-events:none;z-index:-1;background:linear-gradient(90deg,transparent,rgba(255,255,255,.7),transparent);animation:glsh 6s ease-in-out infinite}
+@keyframes glsh{0%,55%{left:-45%}100%{left:135%}}
+.tab.on,.btn.g{box-shadow:0 0 0 1px rgba(0,0,0,.6),inset 0 2px 0 rgba(255,255,255,.55),inset 0 -3px 8px rgba(255,255,255,.12),0 14px 28px rgba(10,20,30,.38)!important}
+.tab.on::after,.btn.g::after{content:"";position:absolute;top:-30%;bottom:-30%;left:-45%;width:32%;transform:rotate(22deg);pointer-events:none;z-index:-1;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);animation:glsh 6s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){.glass::after,.tab::after,.ctl button::after,.hint::after,.btn.o::after,.chip::after,.btn.g::after{animation:none}}
 </style>
 </head>
 <body>
