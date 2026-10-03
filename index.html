@@ -275,7 +275,7 @@ document.getElementById("gf").onsubmit=async function(e){e.preventDefault();var 
   <div class="sh"><div class="eyebrow">Look closer</div><h2>See it from every side</h2><p>Drag to turn the decor around. On a phone, swipe sideways.</p></div>
   <div class="glass v360">
     <div class="tabs" id="tabs"></div>
-    <div class="stage" id="stage"><div id="sp" style="position:absolute;inset:0;background-repeat:no-repeat"></div><img id="fr" alt="360 degree view" draggable="false"><div class="hint" id="hint">Drag to rotate</div></div>
+    <div class="stage" id="stage"><div id="sp" style="position:absolute;inset:0;background-repeat:no-repeat"></div><img id="fr" alt="360 degree view" draggable="false"><div class="hint" id="hint">Drag to rotate</div><div id="ailab" style="display:none;position:absolute;left:12px;top:12px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;background:rgba(255,255,255,.8);color:#06287D;padding:5px 10px;border-radius:99px">AI-generated preview</div></div>
     <div class="rail"><i id="rail"></i></div>
     <div class="ctl"><button id="auto">Pause</button><button id="prev">&#8592;</button><button id="next">&#8594;</button></div>
   </div>
@@ -341,7 +341,7 @@ function show(){var n=item.count;pos=((pos%n)+n)%n;var i=Math.floor(pos);
  if(item.sheet){fr.style.display="none";sp.style.display="block";sp.style.backgroundImage="url("+item.sheet+")";sp.style.backgroundSize=(item.cols*100)+"% "+(item.rows*100)+"%";var c=i%item.cols,r=Math.floor(i/item.cols);sp.style.backgroundPosition=(item.cols>1?c/(item.cols-1)*100:0)+"% "+(item.rows>1?r/(item.rows-1)*100:0)+"%"}
  else{sp.style.display="none";fr.style.display="block";fr.src=imgs[i]&&imgs[i].complete?imgs[i].src:url(i)}
  rail.style.width=(i/(n-1)*100)+"%"}
-function load(it){item=it;imgs=[];if(it.sheet){var m=new Image();m.src=it.sheet}else for(var i=0;i<it.count;i++){var m=new Image();m.src=url(i);imgs.push(m)}pos=0;show();[].forEach.call(document.querySelectorAll(".tab"),function(t){t.classList.toggle("on",t.dataset.id==it.id)})}
+function load(it){item=it;imgs=[];if(it.sheet){var m=new Image();m.src=it.sheet}else for(var i=0;i<it.count;i++){var m=new Image();m.src=url(i);imgs.push(m)}pos=0;document.getElementById("ailab").style.display=it.ai?"block":"none";if(it.ai){setAuto(false)}show();[].forEach.call(document.querySelectorAll(".tab"),function(t){t.classList.toggle("on",t.dataset.id==it.id)})}
 function tick(){clearInterval(tmr);tmr=setInterval(function(){if(auto&&!dragging){pos+=.35;show()}},60)}
 fetch("manifest.json?x="+Date.now()).then(function(r){return r.json()}).then(function(j){M=j;var t=document.getElementById("tabs");t.innerHTML=M.items.map(function(it){return '<button class="tab" data-id="'+it.id+'">'+it.name+'</button>'}).join("");[].forEach.call(t.children,function(b,k){b.onclick=function(){load(M.items[k])}});load(M.items[0]);tick()}).catch(function(){document.getElementById("view").style.display="none"});
 function setAuto(v){auto=v;auBtn.textContent=auto?"Pause":"Auto rotate"}
