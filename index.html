@@ -88,7 +88,7 @@ footer{border-top:0}
 html{scroll-behavior:smooth}
 .heroimg img{transform:scale(1.04);animation:kb 18s ease-in-out infinite alternate;will-change:transform}
 @keyframes kb{from{transform:scale(1.04) translate3d(0,0,0)}to{transform:scale(1.16) translate3d(-1.5%,-1.5%,0)}}
-.emb{animation:fl 6s ease-in-out infinite}
+.lk{width:min(380px,78vw);margin:0 auto 14px}.lk img{display:block;width:100%;height:auto}.lk .pe{transform-origin:50% 92%;animation:fl 6s ease-in-out infinite,sw 9s ease-in-out infinite}@keyframes sw{0%,100%{rotate:-1.6deg}50%{rotate:1.6deg}}
 @keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 .js .rv{opacity:0;transform:translateY(28px) scale(.985);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
 .js .rv.in{opacity:1;transform:none}
@@ -109,7 +109,7 @@ html{scroll-behavior:smooth}
 .lb.on{opacity:1;pointer-events:auto}
 .lb img{max-width:92vw;max-height:88vh;border-radius:22px;box-shadow:0 30px 80px rgba(20,30,60,.25);transform:scale(.92);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
 .lb.on img{transform:scale(1)}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.heroimg img,.emb{animation:none}.js .rv{opacity:1;transform:none;transition:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.heroimg img,.lk .pe{animation:none}.js .rv{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
@@ -117,7 +117,7 @@ html{scroll-behavior:smooth}
 <nav><div class="wrap"><div class="logo"><img src="2-logo-word.png" alt="Shagun Events" style="height:20px;width:auto;display:block"></div><div><a href="#about">About</a><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#view">360 View</a><a href="#contact">Contact</a></div></div></nav>
 
 <header class="hero wrap">
-  <img class="emb" src="1-logo-lockup.png" alt="Shagun Events - Creating the WOW factor in every event" width="380" height="415">
+  <div class="lk" role="img" aria-label="Shagun Events - Creating the WOW factor in every event"><img class="pe" src="1-logo-peacock-m.png" alt="" width="380" height="320"><img class="lt" src="2-logo-letters.png" alt="" width="380" height="95"></div>
   <h1>Creating the <em>&lsquo;WOW&rsquo; factor</em> in every event.</h1>
   <p class="lead">You are not just a client, you are family. We take care of every detail so your guests are in awe and you enjoy every moment.</p>
   <div class="btns"><a class="btn g" href="#contact" data-wa>Plan my event</a><a class="btn o" href="#services">What we handle</a></div>
