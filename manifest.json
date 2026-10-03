@@ -1,6 +1,20 @@
 {
  "items": [
-  {"id":"garland","name":"Flower garland","count":24,"still":"1-garland.jpg","axis":"y"},
-  {"id":"stage","name":"Stage decor","count":24,"still":"7-g07.jpg","axis":"x"}
+  {
+   "id": "garland",
+   "name": "Flower garland",
+   "count": 24,
+   "sheet": "1-360-garland-light.jpg",
+   "cols": 6,
+   "rows": 4
+  },
+  {
+   "id": "stage",
+   "name": "Stage decor",
+   "count": 24,
+   "sheet": "2-360-stage-light.jpg",
+   "cols": 6,
+   "rows": 4
+  }
  ]
 }
