@@ -200,6 +200,13 @@ nav{background:rgba(255,255,255,.64)!important;-webkit-backdrop-filter:blur(6px)
 .more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s cubic-bezier(.2,.7,.2,1);opacity:.0;transition:grid-template-rows .5s cubic-bezier(.2,.7,.2,1),opacity .4s}
 .more .mi{overflow:hidden;min-height:0}.more.on{grid-template-rows:1fr;opacity:1}
 .rm{font:inherit;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#06287D;background:none;border:0;padding:6px 0;margin:4px 0 14px;cursor:pointer;border-bottom:1.5px solid rgba(6,40,125,.35)}
+/* v27 gap-free mosaic */
+#gal{display:grid!important;columns:auto!important;grid-template-columns:repeat(3,1fr);grid-auto-rows:clamp(110px,14vw,200px);gap:14px}
+#gal .gi{margin:0!important;height:100%;opacity:1!important;transform:none!important}
+#gal .gi img{width:100%;height:100%!important;aspect-ratio:auto!important;object-fit:cover}
+#gal .gi:nth-child(12n+1){grid-area:1/1/3/2}#gal .gi:nth-child(12n+2){grid-area:1/2/2/3}#gal .gi:nth-child(12n+3){grid-area:1/3/2/4}#gal .gi:nth-child(12n+4){grid-area:2/2/3/4}#gal .gi:nth-child(12n+5){grid-area:3/1/5/3}#gal .gi:nth-child(12n+6){grid-area:3/3/4/4}#gal .gi:nth-child(12n+7){grid-area:4/3/5/4}
+#gal .gi:nth-child(12n+8){grid-area:5/1/7/2}#gal .gi:nth-child(12n+9){grid-area:5/2/6/4}#gal .gi:nth-child(12n+10){grid-area:6/2/7/3}#gal .gi:nth-child(12n+11){grid-area:6/3/9/4}#gal .gi:nth-child(12n+12){grid-area:7/1/9/3}
+@media (max-width:700px){#gal{grid-template-columns:1fr 1fr;grid-auto-rows:150px}#gal .gi:nth-child(n){grid-area:auto}}
 </style>
 </head>
 <body><style>#gate{position:fixed;inset:0;z-index:99999;background:#fbfbfd;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:24px;font-family:inherit}#gate img{width:150px;height:auto;margin-bottom:6px}#gate h2{font-size:22px;margin:6px 0 4px;letter-spacing:-.3px}#gate p{color:#5a6573;margin:0 0 20px;font-size:15px}#gate form{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}#gate input{font:inherit;padding:14px 20px;border-radius:99px;border:1.5px solid rgba(60,100,130,.3);background:rgba(255,255,255,.7);min-width:230px;text-align:center;outline:none}#gate input:focus{border-color:#06287D}#gate button{font:inherit;font-weight:600;padding:14px 28px;border-radius:99px;border:1.5px solid rgba(255,255,255,.75);color:#fff;background:linear-gradient(160deg,rgba(35,50,75,.9),rgba(10,16,28,.85));box-shadow:inset 0 3px 2px rgba(255,255,255,.5),0 10px 24px rgba(10,25,45,.3);cursor:pointer}#gate .e{color:#b3261e;height:18px;margin-top:12px;font-size:14px}html.lk{overflow:hidden}#gate button{border:0!important;background:linear-gradient(180deg,rgba(38,48,66,.9),rgba(14,20,32,.92))!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 8px 20px rgba(10,25,45,.28)!important;position:relative;overflow:hidden}
@@ -322,7 +329,7 @@ var h=document.getElementById("hero");
 if(SITE.hero.src){h.style.display="block";h.innerHTML=SITE.hero.type=="video"?'<video src="'+SITE.hero.src+'" autoplay muted loop playsinline></video>':'<img src="'+SITE.hero.src+'" alt="">'}
 var PH=[["Plan",IM.g04,[0,1,11,8,7]],["Create",IM.g02,[2,3,4,10]],["Run",IM.g08,[5,6,9]],["Close",IM.g10,[12,13]]];
 document.getElementById("pk").innerHTML=PH.map(function(p,i){return '<div class="ph'+(i%2?' rev':'')+'"><figure><img src="'+p[1]+'" alt="" loading="lazy"></figure><div class="glass phc"><div class="pn ser">'+p[0]+'</div><ul>'+p[2].map(function(k){var v=SITE.services[k];return '<li><h3>'+v[0]+'</h3><p>'+v[1]+'</p></li>'}).join("")+'</ul></div></div>'}).join("");
-document.getElementById("gal").innerHTML=SITE.gallery.map(function(g,i){var R=["4/5","1/1","4/3","3/4","16/10","1/1","4/5","4/3","1/1","3/4","4/3","4/5"];return '<a class="gi rv" href="'+g+'"><img style="aspect-ratio:'+R[i%R.length]+'" src="'+g+'" alt="Event decor by Shagun Events" loading="lazy"></a>'}).join("");
+document.getElementById("gal").innerHTML=SITE.gallery.map(function(g,i){var R=["4/5","1/1","4/3","3/4","16/10","1/1","4/5","4/3","1/1","3/4","4/3","4/5"];return '<a class="gi" href="'+g+'"><img style="aspect-ratio:'+R[i%R.length]+'" src="'+g+'" alt="Event decor by Shagun Events" loading="lazy"></a>'}).join("");
 document.getElementById("ev").innerHTML=SITE.events.map(function(e){return '<span class="chip">'+e+'</span>'}).join("");
 
 /* ---- 360 viewer: a folder of photos per item, listed in 360/manifest.json ---- */
