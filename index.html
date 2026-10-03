@@ -41,7 +41,7 @@ section{padding:64px 0}
 .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
 .pk{padding:26px}
 .pk h3{margin:6px 0 2px;font-size:20px;letter-spacing:-.3px}
-.v360{padding:18px}#view{padding-top:76px!important;padding-bottom:20px!important}#view .sh{margin-bottom:14px}#view .sh p{margin-top:6px}#view .stage{max-width:calc((100vh - 380px)*1.3333);max-width:calc((100svh - 380px)*1.3333);min-width:min(100%,300px);margin-left:auto;margin-right:auto}
+.v360{padding:18px}#view .stage.bare{background:none!important;border:0!important;box-shadow:none!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}#view .stage:not(.bare){background:linear-gradient(137deg,rgba(255,255,255,.3) 0%,rgba(255,255,255,.04) 30%,rgba(255,255,255,.02) 55%,rgba(255,255,255,.22) 100%);border:1px solid rgba(255,255,255,.75);-webkit-backdrop-filter:blur(3px) saturate(1.5);backdrop-filter:blur(3px) saturate(1.5);box-shadow:inset 0 1px 0 rgba(255,255,255,.95),inset 0 -1px 0 rgba(120,150,170,.18),0 8px 22px rgba(20,30,60,.06)}#view{padding-top:76px!important;padding-bottom:20px!important}#view .sh{margin-bottom:14px}#view .sh p{margin-top:6px}#view .stage{max-width:calc((100vh - 380px)*1.3333);max-width:calc((100svh - 380px)*1.3333);min-width:min(100%,300px);margin-left:auto;margin-right:auto}
 .tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
 .tab{border:1px solid var(--line);background:#fff;color:var(--mut);border-radius:99px;padding:8px 18px;font-weight:600;font-size:14px;cursor:pointer}
 .tab.on{background:#0b0d12;color:#fff;border-color:transparent}
@@ -275,7 +275,7 @@ document.getElementById("gf").onsubmit=async function(e){e.preventDefault();var 
   <div class="sh"><div class="eyebrow">Look closer</div><h2>See it from every side</h2><p>Drag to turn the decor around. On a phone, swipe sideways.</p></div>
   <div class="glass v360">
     <div class="tabs" id="tabs"></div>
-    <div class="stage" id="stage"><div id="sp" style="position:absolute;inset:0;background-repeat:no-repeat"></div><img id="fr" alt="360 degree view" draggable="false"><div class="hint" id="hint">Drag to rotate</div><div id="ailab" style="display:none;position:absolute;left:12px;top:12px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;background:rgba(255,255,255,.8);color:#06287D;padding:5px 10px;border-radius:99px">AI-generated preview</div></div>
+    <div class="stage" id="stage"><div id="sp" style="position:absolute;inset:0;background-repeat:no-repeat"></div><img id="fr" alt="360 degree view" draggable="false"><div class="hint" id="hint">Drag to rotate</div></div>
     <div class="rail"><i id="rail"></i></div>
     <div class="ctl"><button id="auto">Pause</button><button id="prev">&#8592;</button><button id="next">&#8594;</button></div>
   </div>
@@ -341,7 +341,7 @@ function show(){var n=item.count;pos=((pos%n)+n)%n;var i=Math.floor(pos);
  if(item.sheet){fr.style.display="none";sp.style.display="block";sp.style.backgroundImage="url("+item.sheet+")";sp.style.backgroundSize=(item.cols*100)+"% "+(item.rows*100)+"%";var c=i%item.cols,r=Math.floor(i/item.cols);sp.style.backgroundPosition=(item.cols>1?c/(item.cols-1)*100:0)+"% "+(item.rows>1?r/(item.rows-1)*100:0)+"%"}
  else{sp.style.display="none";fr.style.display="block";fr.src=imgs[i]&&imgs[i].complete?imgs[i].src:url(i)}
  rail.style.width=(i/(n-1)*100)+"%"}
-function load(it){item=it;imgs=[];if(it.sheet){var m=new Image();m.src=it.sheet}else for(var i=0;i<it.count;i++){var m=new Image();m.src=url(i);imgs.push(m)}pos=0;document.getElementById("ailab").style.display=it.ai?"block":"none";if(it.ai){setAuto(false)}show();[].forEach.call(document.querySelectorAll(".tab"),function(t){t.classList.toggle("on",t.dataset.id==it.id)})}
+function load(it){item=it;imgs=[];if(it.sheet){var m=new Image();m.src=it.sheet}else for(var i=0;i<it.count;i++){var m=new Image();m.src=url(i);imgs.push(m)}pos=0;st.classList.toggle("bare",!!it.ai);if(it.ai){setAuto(false)}show();[].forEach.call(document.querySelectorAll(".tab"),function(t){t.classList.toggle("on",t.dataset.id==it.id)})}
 function tick(){clearInterval(tmr);tmr=setInterval(function(){if(auto&&!dragging){pos+=.35;show()}},60)}
 fetch("manifest.json?x="+Date.now()).then(function(r){return r.json()}).then(function(j){M=j;var t=document.getElementById("tabs");t.innerHTML=M.items.map(function(it){return '<button class="tab" data-id="'+it.id+'">'+it.name+'</button>'}).join("");[].forEach.call(t.children,function(b,k){b.onclick=function(){load(M.items[k])}});load(M.items[0]);tick()}).catch(function(){document.getElementById("view").style.display="none"});
 function setAuto(v){auto=v;auBtn.textContent=auto?"Pause":"Auto rotate"}
