@@ -10,7 +10,7 @@
 :root{--ink:#0b0d12;--mut:#5d6472;--line:rgba(11,13,18,.09);--acc:#0e7c86;--gold:#b58a2e}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth}
-body{margin:0;background:#fbfbfd;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.55}
+body{margin:0;background-attachment:scroll;background:linear-gradient(125deg,#fffefa 0%,#e9e7e3 13%,#fffefa 27%,#f4f0e8 44%,#fff 60%,#e8e7e5 73%,#fffefa 87%,#efebe3 100%) fixed;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.55}
 .bg{position:fixed;inset:0;z-index:-1;background:radial-gradient(640px 480px at 6% -6%,rgba(14,124,134,.10),transparent 70%),radial-gradient(560px 520px at 104% 24%,rgba(120,98,255,.08),transparent 70%),radial-gradient(620px 520px at 0% 92%,rgba(224,120,140,.07),transparent 70%),#fbfbfd}
 .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
 nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);background:rgba(255,255,255,.72);border-bottom:1px solid var(--line)}
@@ -65,7 +65,7 @@ html{scroll-behavior:smooth}
 @keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 .js .rv{opacity:0;transform:translateY(28px) scale(.985);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
 .js .rv.in{opacity:1;transform:none}
-.glass{transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s ease}
+.glass,.chip,.btn.o{--x:0}.glass{transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s ease}
 .glass:hover{transform:translateY(-6px);box-shadow:0 28px 60px rgba(20,30,60,.14),inset 0 1px 0 rgba(255,255,255,.9)}
 .glass:active{transform:translateY(-2px) scale(.985)}
 .btn{transition:transform .25s ease,box-shadow .25s ease}
@@ -84,15 +84,15 @@ html{scroll-behavior:smooth}
 .lb.on img{transform:scale(1)}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.heroimg img,.emb{animation:none}.js .rv{opacity:1;transform:none;transition:none}}
 
-.lk{width:min(460px,88vw);margin:0 auto 18px}.lk img{display:block;width:100%;height:auto}.lk .emb{width:100%!important;margin:0!important}.lk .lt{margin-top:-2px}
+.lk{width:min(370px,74vw);margin:0 auto 18px}.lk img{display:block;width:100%;height:auto}.lk .emb{width:100%!important;margin:0!important}.lk .lt{margin-top:-2px}
 /* liquid glass: the Sonar Katta app's own default values (level 85): clear, low blur */
 .bg{background:radial-gradient(ellipse at 84% 12%,#f7e7bd78 0%,transparent 32%),radial-gradient(ellipse at 12% 64%,#f3dfb36a 0%,transparent 29%),linear-gradient(125deg,#fffefa 0%,#e9e7e3 13%,#fffefa 27%,#f4f0e8 44%,#fff 60%,#e8e7e5 73%,#fffefa 87%,#efebe3 100%)}
-.glass,.chip,.btn.o,.tab,.ctl button,.hint{position:relative;isolation:isolate;overflow:hidden;color:#233540;background:linear-gradient(125deg,rgba(255,255,255,.26),rgba(247,253,255,.26));border:1px solid rgba(255,255,255,.78);-webkit-backdrop-filter:blur(8px) saturate(1.45);backdrop-filter:blur(8px) saturate(1.45);box-shadow:inset 0 1px 0 rgba(255,255,255,.78),inset 0 -1px 0 #718c9920,0 8px 19px rgba(50,78,94,.17)}
+.glass,.chip,.btn.o,.tab,.ctl button,.hint{position:relative;isolation:isolate;overflow:hidden;color:#233540;background:linear-gradient(125deg,rgba(255,255,255,.26),rgba(247,253,255,.26));border:1px solid rgba(255,255,255,.78);-webkit-backdrop-filter:blur(2px) saturate(1.6);backdrop-filter:blur(2px) saturate(1.6);box-shadow:inset 0 1px 0 rgba(255,255,255,.78),inset 0 -1px 0 #718c9920,0 8px 19px rgba(50,78,94,.17)}
 .glass::before,.chip::before,.btn.o::before,.tab::before,.ctl button::before,.hint::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:0;background:linear-gradient(150deg,rgba(255,255,255,.55),transparent 24%,transparent 80%,rgba(255,255,255,.55))}
 .glass>*{position:relative;z-index:1}
 .hint{position:absolute}
 .tab.on{background:#0b0d12;color:#fff;border-color:transparent;box-shadow:none}.tab.on::before{display:none}
-nav{background:linear-gradient(125deg,rgba(255,255,255,.5),rgba(247,253,255,.4));border-bottom:1px solid rgba(255,255,255,.78);-webkit-backdrop-filter:blur(8px) saturate(1.45);backdrop-filter:blur(8px) saturate(1.45);box-shadow:inset 0 -1px 0 #718c9920,0 4px 14px rgba(50,78,94,.12)}
+nav{background:linear-gradient(125deg,rgba(255,255,255,.5),rgba(247,253,255,.4));border-bottom:1px solid rgba(255,255,255,.78);-webkit-backdrop-filter:blur(2px) saturate(1.6);backdrop-filter:blur(2px) saturate(1.6);box-shadow:inset 0 -1px 0 #718c9920,0 4px 14px rgba(50,78,94,.12)}
 .heroimg{border:1px solid rgba(255,255,255,.78);box-shadow:0 8px 19px rgba(50,78,94,.17)}
 .stage{box-shadow:inset 0 0 0 1px #ffffffb0}
 </style>
