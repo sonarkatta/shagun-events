@@ -95,6 +95,42 @@ html{scroll-behavior:smooth}
 nav{background:linear-gradient(125deg,rgba(255,255,255,.5),rgba(247,253,255,.4));border-bottom:1px solid rgba(255,255,255,.78);-webkit-backdrop-filter:blur(2px) saturate(1.6);backdrop-filter:blur(2px) saturate(1.6);box-shadow:inset 0 -1px 0 #718c9920,0 4px 14px rgba(50,78,94,.12)}
 .heroimg{border:1px solid rgba(255,255,255,.78);box-shadow:0 8px 19px rgba(50,78,94,.17)}
 .stage{box-shadow:inset 0 0 0 1px #ffffffb0}
+
+/* editorial layout */
+.ser{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-weight:400;letter-spacing:-.5px}
+.ser em,h2 em{font-style:italic;color:#0e5f78}
+.ab{padding:80px 0 30px}.abg{display:grid;grid-template-columns:1fr;gap:34px;align-items:center}
+.abp{margin:0;position:relative;border-radius:200px 200px 28px 28px;overflow:hidden;aspect-ratio:4/5;max-width:420px;justify-self:center;width:100%;box-shadow:0 18px 40px rgba(50,78,94,.2),0 0 0 8px rgba(255,255,255,.7)}
+.abp img{width:100%;height:100%;object-fit:cover;display:block}
+.abt h2{font-size:clamp(34px,6vw,60px);line-height:1.05;margin:10px 0 18px}
+.lead2{font-size:clamp(17px,2.2vw,21px);color:#3a4651;line-height:1.6;margin:0 0 26px;max-width:560px}
+.yrs{display:flex;gap:18px;align-items:center;border-top:1px solid rgba(11,13,18,.14);padding-top:20px;max-width:560px}
+.yrs b{font-size:68px;line-height:1;color:#0e5f78}.yrs span{color:var(--mut);font-size:15px}
+.vl{list-style:none;margin:6px 0 0;padding:0}
+.vl li{display:grid;grid-template-columns:1fr;gap:6px;padding:26px 0;border-top:1px solid rgba(11,13,18,.14);transition:padding .35s}
+.vl li:last-child{border-bottom:1px solid rgba(11,13,18,.14)}
+.vl li span{font-size:clamp(28px,5vw,46px);line-height:1.1}
+.vl li p{margin:0;color:var(--mut);max-width:440px}
+.vl li:hover{padding-left:14px}
+.ph{position:relative;margin:0 0 54px}
+.ph figure{margin:0;border-radius:28px;overflow:hidden;aspect-ratio:16/11;box-shadow:0 14px 34px rgba(50,78,94,.18)}
+.ph figure img{width:100%;height:100%;object-fit:cover;display:block}
+.phc{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:linear-gradient(125deg,rgba(255,255,255,.9),rgba(247,253,255,.84))!important;margin:-56px 14px 0;padding:26px 22px 8px;border-radius:24px}
+.pn{font-size:clamp(34px,6vw,52px);line-height:1;margin-bottom:10px;color:#0b0d12}
+.phc ul{list-style:none;margin:0;padding:0}
+.phc li{padding:14px 0;border-top:1px solid rgba(11,13,18,.12)}
+.phc li h3{margin:0 0 3px;font-size:17px;letter-spacing:-.2px}
+.phc li p{margin:0;color:var(--mut);font-size:14.5px}
+.chips{gap:12px}.chip{font-size:16px;padding:12px 24px}
+.chip:nth-child(3n+1){font-family:"Iowan Old Style",Palatino,Georgia,serif;font-style:italic;font-size:18px}
+@media(min-width:860px){
+ .abg{grid-template-columns:5fr 6fr;gap:80px}
+ .vl li{grid-template-columns:5fr 4fr;align-items:baseline}
+ .ph{display:grid;grid-template-columns:repeat(12,1fr);align-items:center;margin-bottom:70px}
+ .ph figure{grid-column:1/8;grid-row:1;aspect-ratio:4/3}
+ .phc{grid-column:7/13;grid-row:1;margin:0;padding:34px 34px 18px}
+ .ph.rev figure{grid-column:6/13}.ph.rev .phc{grid-column:1/7}
+}
 </style>
 </head>
 <body>
@@ -109,24 +145,30 @@ nav{background:linear-gradient(125deg,rgba(255,255,255,.5),rgba(247,253,255,.4))
   <div class="heroimg" id="hero" style="display:none"></div>
 </header>
 
-<section id="about"><div class="wrap">
-  <div class="glass" style="padding:34px;text-align:center">
+<section id="about" class="ab"><div class="wrap abg">
+  <figure class="abp"><img src="3-g03.jpg" alt="Decor by Shagun Events" loading="lazy"></figure>
+  <div class="abt">
     <div class="eyebrow">About us</div>
-    <h2 style="font-size:clamp(26px,4vw,36px);margin:8px 0 14px">Your guests are our guests</h2>
-    <p class="lead" style="margin:0 auto 14px;max-width:700px">Our well-trained and passionate team makes every moment seamless, elegant and unforgettable, from the first impression to the final farewell.</p>
-    <p style="color:var(--mut);margin:0 auto;max-width:700px">For over two years we have been delivering excellence and redefining what it means to host extraordinary events.</p>
+    <h2 class="ser">Your guests are <em>our</em> guests.</h2>
+    <p class="lead2">Our well-trained and passionate team makes every moment seamless, elegant and unforgettable, from the first impression to the final farewell.</p>
+    <div class="yrs"><b class="ser">2+</b><span>years of delivering excellence and redefining what it means to host extraordinary events.</span></div>
   </div>
 </div></section>
 
 <section id="values"><div class="wrap">
-  <div class="sh"><div class="eyebrow">What we stand for</div><h2>Our Business Values</h2></div>
-  <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr))"><div class="glass" style="padding:26px"><h3 style="margin:0 0 8px;font-size:19px">Trust</h3><p style="color:var(--mut);margin:0">Every event is treated like our own family's. Your guests are our guests.</p></div><div class="glass" style="padding:26px"><h3 style="margin:0 0 8px;font-size:19px">Responsiveness</h3><p style="color:var(--mut);margin:0">One call, one message, and we move. From first plan to final farewell, we answer fast.</p></div><div class="glass" style="padding:26px"><h3 style="margin:0 0 8px;font-size:19px">Politeness</h3><p style="color:var(--mut);margin:0">Every guest is greeted with warmth and respect, so your event feels personal.</p></div><div class="glass" style="padding:26px"><h3 style="margin:0 0 8px;font-size:19px">Sense of Humor</h3><p style="color:var(--mut);margin:0">We keep the mood light even when the pressure is high. A calm team makes a happy event.</p></div></div>
+  <div class="eyebrow" style="text-align:left">What we stand for</div>
+  <ul class="vl">
+    <li><span class="ser">Trust</span><p>Every event is treated like our own family's. Your guests are our guests.</p></li>
+    <li><span class="ser">Responsiveness</span><p>One call, one message, and we move. From first plan to final farewell, we answer fast.</p></li>
+    <li><span class="ser">Politeness</span><p>Every guest is greeted with warmth and respect, so your event feels personal.</p></li>
+    <li><span class="ser">Sense of Humor</span><p>We keep the mood light even when the pressure is high. A calm team makes a happy event.</p></li>
+  </ul>
 </div></section>
 
 <section id="services"><div class="wrap">
-  <div class="sh"><div class="eyebrow">Shagun Events</div><h2>Event management, end to end</h2><p>One team, from the first plan to the last guest.</p></div>
-  <div class="grid" id="pk"></div>
-  <div class="sh" style="margin-top:56px"><div class="eyebrow">Events we run</div><h2>Every kind of celebration</h2></div>
+  <div class="sh"><div class="eyebrow">Shagun Events</div><h2 class="ser">Event management, <em>end to end</em></h2><p>One team, from the first plan to the last guest.</p></div>
+  <div id="pk"></div>
+  <div class="sh" style="margin-top:72px"><div class="eyebrow">Events we run</div><h2 class="ser">Every kind of <em>celebration</em></h2></div>
   <div class="chips" id="ev"></div>
 </div></section>
 
@@ -188,7 +230,8 @@ function waLink(){if(!SITE.whatsapp)return "#contact";return "https://wa.me/"+SI
 document.querySelectorAll("[data-wa]").forEach(function(a){var l=waLink();a.href=l;if(l!="#contact"){a.target="_blank";a.rel="noopener"}else if(a.classList.contains("wa")){a.style.display="none"}});
 var h=document.getElementById("hero");
 if(SITE.hero.src){h.style.display="block";h.innerHTML=SITE.hero.type=="video"?'<video src="'+SITE.hero.src+'" autoplay muted loop playsinline></video>':'<img src="'+SITE.hero.src+'" alt="">'}
-document.getElementById("pk").innerHTML=SITE.services.map(function(p,i){return '<div class="glass pk"><div class="n">0'+(i+1)+'</div><h3>'+p[0]+'</h3><p style="color:var(--mut);margin:8px 0 0">'+p[1]+'</p></div>'}).join("");
+var PH=[["Plan","4-g04.jpg",[0,1,11,8,7]],["Create","2-g02.jpg",[2,3,4,10]],["Run","8-g08.jpg",[5,6,9]],["Close","10-g10.jpg",[12]]];
+document.getElementById("pk").innerHTML=PH.map(function(p,i){return '<div class="ph'+(i%2?' rev':'')+'"><figure><img src="'+p[1]+'" alt="" loading="lazy"></figure><div class="glass phc"><div class="pn ser">'+p[0]+'</div><ul>'+p[2].map(function(k){var v=SITE.services[k];return '<li><h3>'+v[0]+'</h3><p>'+v[1]+'</p></li>'}).join("")+'</ul></div></div>'}).join("");
 document.getElementById("gal").innerHTML=SITE.gallery.map(function(g){return '<a class="gi rv" href="'+g+'"><img src="'+g+'" alt="Event decor by Shagun Events" loading="lazy"></a>'}).join("");
 document.getElementById("ev").innerHTML=SITE.events.map(function(e){return '<span class="chip">'+e+'</span>'}).join("");
 
@@ -219,7 +262,7 @@ document.addEventListener("keydown",function(e){if(e.key=="ArrowLeft"){pos-=1;sh
 <script>
 (function(){
 document.documentElement.classList.add("js");
-var sel=".hero .eyebrow,.hero h1,.hero .lead,.hero .btns,.heroimg,.sh,.glass,.chips,.gi,footer .wrap";
+var sel=".abp,.abt,.vl li,.ph,.hero .eyebrow,.hero h1,.hero .lead,.hero .btns,.heroimg,.sh,.glass,.chips,.gi,footer .wrap";
 var els=[].slice.call(document.querySelectorAll(sel));
 els.forEach(function(e,i){e.classList.add("rv");e.style.setProperty("--d",((i%4)*0.08)+"s")});
 if(!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("in")});}
