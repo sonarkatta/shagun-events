@@ -309,7 +309,8 @@ var SITE={
   ["Photography &amp; Videography","Photo and video coverage, live streaming, highlight reels and albums."],
   ["Makeup &amp; Styling","Bridal, party, stage and theme-specific makeup."],
   ["Guest &amp; RSVP Management","Invitations, RSVP tracking, guest lists, VIP hospitality, welcome kits, airport and hotel coordination."],
-  ["Post-Event Services","Feedback, event reporting, cleanup, and thank-you notes or gifts."]
+  ["Post-Event Services","Feedback, event reporting, cleanup, and thank-you notes or gifts."],
+  ["Gifting &amp; Hampers","Return gifts and favours for every guest, personalised hampers, trousseau packaging."]
  ],
  gallery:[IM.g02,IM.g03,IM.g04,IM.g05,IM.g06,IM.g07,IM.g08,IM.g09,IM.g10,IM.g11,IM.g12,IM.g13],
  events:["Weddings","Sports Events","Corporate Events","Cultural Events","Social Gatherings","Charity Events","Festivals","Product Launches","Exhibitions & Trade Shows","Private Parties","Religious Ceremonies","Concerts & Award Ceremonies"]
@@ -319,7 +320,7 @@ function waLink(){if(!SITE.whatsapp)return "#contact";return "https://wa.me/"+SI
 document.querySelectorAll("[data-wa]").forEach(function(a){var l=waLink();a.href=l;if(l!="#contact"){a.target="_blank";a.rel="noopener"}else if(a.classList.contains("wa")){a.style.display="none"}});
 var h=document.getElementById("hero");
 if(SITE.hero.src){h.style.display="block";h.innerHTML=SITE.hero.type=="video"?'<video src="'+SITE.hero.src+'" autoplay muted loop playsinline></video>':'<img src="'+SITE.hero.src+'" alt="">'}
-var PH=[["Plan",IM.g04,[0,1,11,8,7]],["Create",IM.g02,[2,3,4,10]],["Run",IM.g08,[5,6,9]],["Close",IM.g10,[12]]];
+var PH=[["Plan",IM.g04,[0,1,11,8,7]],["Create",IM.g02,[2,3,4,10]],["Run",IM.g08,[5,6,9]],["Close",IM.g10,[12,13]]];
 document.getElementById("pk").innerHTML=PH.map(function(p,i){return '<div class="ph'+(i%2?' rev':'')+'"><figure><img src="'+p[1]+'" alt="" loading="lazy"></figure><div class="glass phc"><div class="pn ser">'+p[0]+'</div><ul>'+p[2].map(function(k){var v=SITE.services[k];return '<li><h3>'+v[0]+'</h3><p>'+v[1]+'</p></li>'}).join("")+'</ul></div></div>'}).join("");
 document.getElementById("gal").innerHTML=SITE.gallery.map(function(g,i){var R=["4/5","1/1","4/3","3/4","16/10","1/1","4/5","4/3","1/1","3/4","4/3","4/5"];return '<a class="gi rv" href="'+g+'"><img style="aspect-ratio:'+R[i%R.length]+'" src="'+g+'" alt="Event decor by Shagun Events" loading="lazy"></a>'}).join("");
 document.getElementById("ev").innerHTML=SITE.events.map(function(e){return '<span class="chip">'+e+'</span>'}).join("");
