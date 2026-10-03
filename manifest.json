@@ -24,7 +24,11 @@
    "cols": 8,
    "rows": 5,
    "aspect": "4/5",
-   "ai": true
+   "ai": true,
+   "hi": [
+    "1-hi1.webp?v=1",
+    "2-hi2.webp?v=1"
+   ]
   }
  ]
 }
