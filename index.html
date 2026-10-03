@@ -127,9 +127,9 @@ nav{background:linear-gradient(125deg,rgba(255,255,255,.5),rgba(247,253,255,.4))
  .abg{grid-template-columns:5fr 6fr;gap:80px}
  .vl li{grid-template-columns:5fr 4fr;align-items:baseline}
  .ph{display:grid;grid-template-columns:repeat(12,1fr);align-items:center;margin-bottom:70px}
- .ph figure{grid-column:1/7;grid-row:1;aspect-ratio:4/3}
+ .ph figure{grid-column:1/8;grid-row:1;aspect-ratio:4/3}
  .phc{grid-column:7/13;grid-row:1;margin:0;padding:34px 34px 18px 40px;margin-left:0}
- .ph.rev figure{grid-column:7/13}.ph.rev .phc{grid-column:1/7;padding:34px 34px 18px 34px}
+ .ph.rev figure{grid-column:6/13}.ph.rev .phc{grid-column:1/7;padding:34px 34px 18px 34px}
 }
 
 /* brand navy #06287D: small accents only (nav, labels, italic accents) */
@@ -147,6 +147,7 @@ nav{background:linear-gradient(125deg,rgba(255,255,255,.5),rgba(247,253,255,.4))
 .tab.on,.btn.g{position:relative;isolation:isolate;overflow:hidden;color:#fff;background:linear-gradient(135deg,rgba(30,36,48,.95),rgba(4,6,10,.86));border:1px solid rgba(255,255,255,.5);-webkit-backdrop-filter:blur(2px) saturate(1.6);backdrop-filter:blur(2px) saturate(1.6);box-shadow:0 0 0 1px rgba(11,13,18,.5),inset 0 1.5px 0 rgba(255,255,255,.6),inset 0 -2px 4px rgba(255,255,255,.1),0 12px 26px rgba(11,13,18,.3)}
 .tab.on::before,.btn.g::before{display:block;content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:-1;background:linear-gradient(160deg,rgba(255,255,255,.42),rgba(255,255,255,.06) 34%,transparent 52%,rgba(255,255,255,.14))}
 /* subtle marble veining behind the page */
+@media (min-width:860px){.phc{-webkit-backdrop-filter:blur(16px) saturate(1.5)!important;backdrop-filter:blur(16px) saturate(1.5)!important;background:linear-gradient(135deg,rgba(255,255,255,.74),rgba(240,247,250,.6))!important;z-index:2}.phc li h3,.phc li p{color:#000!important}}
 </style>
 </head>
 <body>
@@ -222,7 +223,7 @@ var SITE={
  whatsapp:"",
  phones:[],
  message:"Hello Shagun Events, I would like to plan an event.",
- hero:{type:"image",src:"1-g01.jpg"},  /* later: type "image" or "video", src like "media/hero.jpg" */
+ hero:{type:"image",src:"5-g05.jpg"},  /* later: type "image" or "video", src like "media/hero.jpg" */
  services:[
   ["Event Planning &amp; Consulting","Concept and theme, budget, timeline and venue selection."],
   ["Venue Management","Scouting and booking, layout planning, venue coordination, setup and teardown."],
