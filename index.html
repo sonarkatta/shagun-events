@@ -56,6 +56,33 @@ section{padding:64px 0}
 footer{padding:34px 0 90px;text-align:center;color:var(--mut);font-size:13px;border-top:1px solid var(--line)}
 .wa{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom));z-index:30;display:flex;align-items:center;gap:10px;padding:14px 22px;border-radius:99px;background:#0b0d12;color:#fff;font-weight:600;text-decoration:none;box-shadow:0 12px 30px rgba(11,13,18,.25)}
 .wa svg{width:22px;height:22px}
+
+/* motion */
+html{scroll-behavior:smooth}
+.heroimg img{transform:scale(1.04);animation:kb 18s ease-in-out infinite alternate;will-change:transform}
+@keyframes kb{from{transform:scale(1.04) translate3d(0,0,0)}to{transform:scale(1.16) translate3d(-1.5%,-1.5%,0)}}
+.emb{animation:fl 6s ease-in-out infinite}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.js .rv{opacity:0;transform:translateY(28px) scale(.985);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.js .rv.in{opacity:1;transform:none}
+.glass{transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s ease}
+.glass:hover{transform:translateY(-6px);box-shadow:0 28px 60px rgba(20,30,60,.14),inset 0 1px 0 rgba(255,255,255,.9)}
+.glass:active{transform:translateY(-2px) scale(.985)}
+.btn{transition:transform .25s ease,box-shadow .25s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:scale(.96)}
+.chip{transition:transform .25s ease}
+.chip:hover{transform:translateY(-3px) scale(1.04)}
+#gal{overflow:hidden}
+#gal .gi{display:block;margin:0 0 14px;border-radius:20px;overflow:hidden;break-inside:avoid;box-shadow:0 12px 34px rgba(20,30,60,.10);cursor:pointer}
+#gal .gi img{width:100%;display:block;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+#gal .gi:hover img{transform:scale(1.07)}
+#gal .gi:active img{transform:scale(1.02)}
+.lb{position:fixed;inset:0;z-index:60;background:rgba(251,251,253,.92);backdrop-filter:blur(14px);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .35s}
+.lb.on{opacity:1;pointer-events:auto}
+.lb img{max-width:92vw;max-height:88vh;border-radius:22px;box-shadow:0 30px 80px rgba(20,30,60,.25);transform:scale(.92);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.lb.on img{transform:scale(1)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.heroimg img,.emb{animation:none}.js .rv{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
@@ -151,7 +178,7 @@ document.querySelectorAll("[data-wa]").forEach(function(a){var l=waLink();a.href
 var h=document.getElementById("hero");
 if(SITE.hero.src){h.style.display="block";h.innerHTML=SITE.hero.type=="video"?'<video src="'+SITE.hero.src+'" autoplay muted loop playsinline></video>':'<img src="'+SITE.hero.src+'" alt="">'}
 document.getElementById("pk").innerHTML=SITE.services.map(function(p,i){return '<div class="glass pk"><div class="n">0'+(i+1)+'</div><h3>'+p[0]+'</h3><p style="color:var(--mut);margin:8px 0 0">'+p[1]+'</p></div>'}).join("");
-document.getElementById("gal").innerHTML=SITE.gallery.map(function(g){return '<img src="'+g+'" alt="Event decor by Shagun Events" loading="lazy" style="width:100%;display:block;margin:0 0 14px;border-radius:20px;break-inside:avoid;box-shadow:0 12px 34px rgba(20,30,60,.10)">'}).join("");
+document.getElementById("gal").innerHTML=SITE.gallery.map(function(g){return '<a class="gi rv" href="'+g+'"><img src="'+g+'" alt="Event decor by Shagun Events" loading="lazy"></a>'}).join("");
 document.getElementById("ev").innerHTML=SITE.events.map(function(e){return '<span class="chip">'+e+'</span>'}).join("");
 document.getElementById("call").href="tel:+91"+SITE.phones[0];
 document.getElementById("ph").innerHTML=SITE.phones.map(function(p){return '<a style="color:var(--ink);text-decoration:none" href="tel:+91'+p+'">+91 '+p+'</a>'}).join(" &nbsp;&middot;&nbsp; ");
@@ -177,5 +204,24 @@ document.getElementById("prev").onclick=function(){setAuto(false);pos-=1;show()}
 document.getElementById("next").onclick=function(){setAuto(false);pos+=1;show()};
 auBtn.onclick=function(){setAuto(!auto)};
 document.addEventListener("keydown",function(e){if(e.key=="ArrowLeft"){pos-=1;show()}if(e.key=="ArrowRight"){pos+=1;show()}});
+</script>
+
+<div class="lb" id="lb"><img id="lbi" alt=""></div>
+<script>
+(function(){
+document.documentElement.classList.add("js");
+var sel=".hero .eyebrow,.hero h1,.hero .lead,.hero .btns,.heroimg,.sh,.glass,.chips,.gi,footer .wrap";
+var els=[].slice.call(document.querySelectorAll(sel));
+els.forEach(function(e,i){e.classList.add("rv");e.style.setProperty("--d",((i%4)*0.08)+"s")});
+if(!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("in")});}
+else{var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){var t=x.target;t.classList.add("in");io.unobserve(t);setTimeout(function(){t.classList.remove("rv","in")},1200)}})},{threshold:.12,rootMargin:"0px 0px -6% 0px"});els.forEach(function(e){io.observe(e)});}
+var hi=document.querySelector(".heroimg");
+window.addEventListener("scroll",function(){var y=window.scrollY;if(hi&&y<900){hi.style.transform="translate3d(0,"+(y*.06)+"px,0)"}},{passive:true});
+document.querySelectorAll(".pk,.glass").forEach(function(c){c.addEventListener("pointermove",function(e){if(e.pointerType!=="mouse")return;var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform="translateY(-6px) perspective(700px) rotateY("+(x*5)+"deg) rotateX("+(-y*5)+"deg)"});c.addEventListener("pointerleave",function(){c.style.transform=""})});
+var lb=document.getElementById("lb"),lbi=document.getElementById("lbi");
+document.querySelectorAll("#gal .gi").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();lbi.src=a.getAttribute("href");lb.classList.add("on")})});
+lb.addEventListener("click",function(){lb.classList.remove("on")});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")lb.classList.remove("on")});
+})();
 </script>
 </body></html>
