@@ -60,7 +60,7 @@ footer{padding:34px 0 90px;text-align:center;color:var(--mut);font-size:13px;bor
 </head>
 <body>
 <div class="bg"></div>
-<nav><div class="wrap"><div class="logo">SHAGUN <span>EVENTS</span></div><div><a href="#about">About</a><a href="#services">Services</a><a href="#view">360 View</a><a href="#contact">Contact</a></div></div></nav>
+<nav><div class="wrap"><div class="logo">SHAGUN <span>EVENTS</span></div><div><a href="#about">About</a><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#view">360 View</a><a href="#contact">Contact</a></div></div></nav>
 
 <header class="hero wrap">
   <img class="emb" src="1-logo.png" alt="Shagun Events peacock emblem" width="230" height="222">
@@ -85,6 +85,11 @@ footer{padding:34px 0 90px;text-align:center;color:var(--mut);font-size:13px;bor
   <div class="grid" id="pk"></div>
   <div class="sh" style="margin-top:56px"><div class="eyebrow">Events we run</div><h2>Every kind of celebration</h2></div>
   <div class="chips" id="ev"></div>
+</div></section>
+
+<section id="gallery"><div class="wrap">
+  <div class="sh"><div class="eyebrow">Our work</div><h2>Moments we have created</h2></div>
+  <div id="gal" style="columns:3 240px;column-gap:14px"></div>
 </div></section>
 
 <section id="view"><div class="wrap">
@@ -116,7 +121,7 @@ var SITE={
  whatsapp:"",            /* digits with country code, e.g. 918767612346. Empty until the owner confirms which number is on WhatsApp */
  phones:["8767612346","8669348000"],
  message:"Hello Shagun Events, I would like to plan an event.",
- hero:{type:"",src:""},  /* later: type "image" or "video", src like "media/hero.jpg" */
+ hero:{type:"image",src:"1-g01.jpg"},  /* later: type "image" or "video", src like "media/hero.jpg" */
  services:[
   ["Event Planning &amp; Consulting","Concept and theme, budget, timeline and venue selection."],
   ["Venue Management","Scouting and booking, layout planning, venue coordination, setup and teardown."],
@@ -132,6 +137,7 @@ var SITE={
   ["Guest &amp; RSVP Management","Invitations, RSVP tracking, guest lists, VIP hospitality, welcome kits."],
   ["Post-Event Services","Feedback, event reporting, cleanup, and thank-you notes or gifts."]
  ],
+ gallery:["2-g02.jpg","3-g03.jpg","4-g04.jpg","5-g05.jpg","6-g06.jpg","7-g07.jpg","8-g08.jpg","9-g09.jpg","10-g10.jpg","11-g11.jpg","12-g12.jpg","13-g13.jpg"],
  events:["Weddings","Sports Events","Corporate Events","Cultural Events","Social Gatherings","Charity Events","Festivals","Product Launches","Exhibitions & Trade Shows","Private Parties","Religious Ceremonies","Concerts & Award Ceremonies"]
 };
 /* -------------------------------------------------------- */
@@ -140,6 +146,7 @@ document.querySelectorAll("[data-wa]").forEach(function(a){var l=waLink();a.href
 var h=document.getElementById("hero");
 if(SITE.hero.src){h.style.display="block";h.innerHTML=SITE.hero.type=="video"?'<video src="'+SITE.hero.src+'" autoplay muted loop playsinline></video>':'<img src="'+SITE.hero.src+'" alt="">'}
 document.getElementById("pk").innerHTML=SITE.services.map(function(p,i){return '<div class="glass pk"><div class="n">0'+(i+1)+'</div><h3>'+p[0]+'</h3><p style="color:var(--mut);margin:8px 0 0">'+p[1]+'</p></div>'}).join("");
+document.getElementById("gal").innerHTML=SITE.gallery.map(function(g){return '<img src="'+g+'" alt="Event decor by Shagun Events" loading="lazy" style="width:100%;display:block;margin:0 0 14px;border-radius:20px;break-inside:avoid;box-shadow:0 12px 34px rgba(20,30,60,.10)">'}).join("");
 document.getElementById("ev").innerHTML=SITE.events.map(function(e){return '<span class="chip">'+e+'</span>'}).join("");
 document.getElementById("call").href="tel:+91"+SITE.phones[0];
 document.getElementById("ph").innerHTML=SITE.phones.map(function(p){return '<a style="color:var(--ink);text-decoration:none" href="tel:+91'+p+'">+91 '+p+'</a>'}).join(" &nbsp;&middot;&nbsp; ");
