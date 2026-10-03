@@ -88,7 +88,7 @@ footer{border-top:0}
 html{scroll-behavior:smooth}
 .heroimg img{transform:scale(1.04);animation:kb 18s ease-in-out infinite alternate;will-change:transform}
 @keyframes kb{from{transform:scale(1.04) translate3d(0,0,0)}to{transform:scale(1.16) translate3d(-1.5%,-1.5%,0)}}
-.lk{width:min(520px,90vw);margin:0 auto 22px}.lkp{padding:30px 34px 28px;border-radius:40px}@media(max-width:600px){.lkp{padding:22px 20px 20px;border-radius:32px}}.lk img{display:block;width:100%;height:auto}.lk .pe{transform-origin:50% 92%;animation:fl 6s ease-in-out infinite,sw 9s ease-in-out infinite}@keyframes sw{0%,100%{rotate:-1.6deg}50%{rotate:1.6deg}}
+.lk{width:min(520px,90vw);margin:0 auto 22px}.lkp{padding:30px 34px 28px;border-radius:40px}@media(max-width:600px){.lkp{padding:22px 20px 20px;border-radius:32px}}.lk img{display:block;width:100%;height:auto}@keyframes sw{0%,100%{rotate:-1.6deg}50%{rotate:1.6deg}}
 @keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 .js .rv{opacity:0;transform:translateY(28px) scale(.985);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
 .js .rv.in{opacity:1;transform:none}
@@ -110,6 +110,31 @@ html{scroll-behavior:smooth}
 .lb img{max-width:92vw;max-height:88vh;border-radius:22px;box-shadow:0 30px 80px rgba(20,30,60,.25);transform:scale(.92);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
 .lb.on img{transform:scale(1)}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.heroimg img,.lk .pe{animation:none}.js .rv{opacity:1;transform:none;transition:none}}
+
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(60vmax 50vmax at 6% 18%,rgba(60,200,220,.6),transparent 70%),radial-gradient(55vmax 50vmax at 96% 40%,rgba(140,115,255,.55),transparent 70%),radial-gradient(55vmax 45vmax at 30% 85%,rgba(255,180,80,.55),transparent 70%),radial-gradient(40vmax 35vmax at 70% 70%,rgba(255,130,180,.5),transparent 70%)}
+.bg{display:none}
+/* v2: obvious liquid glass (Safari-safe) + living peacock */
+.eyl{letter-spacing:4px;font-size:12.5px;margin:6px auto 0;max-width:94vw}
+@media(max-width:600px){.eyl{letter-spacing:1.2px;font-size:9.5px;white-space:nowrap}}
+body{background:#f4f6fb}
+.orbs i{opacity:.7;filter:blur(48px);-webkit-filter:blur(48px);transform:translateZ(0)}
+.orbs i:nth-child(1){background:radial-gradient(circle,#4fd1dc,transparent 66%)}
+.orbs i:nth-child(2){background:radial-gradient(circle,#9a86ff,transparent 66%)}
+.orbs i:nth-child(3){background:radial-gradient(circle,#ffbf6b,transparent 66%)}
+.orbs i:nth-child(1){left:-12vmax;top:4vh;width:48vmax;height:48vmax}.orbs i:nth-child(2){right:-12vmax;top:10vh;width:46vmax;height:46vmax}.orbs i:nth-child(3){left:18vw;top:46vh;bottom:auto;width:44vmax;height:44vmax}.orbs i:nth-child(4){width:34vmax;height:34vmax;left:34vw;top:20vh;background:radial-gradient(circle,#ff8fb8,transparent 66%);animation:o2 28s ease-in-out infinite alternate}
+:root{--gl:linear-gradient(135deg,rgba(255,255,255,.34),rgba(255,255,255,.06) 55%,rgba(255,255,255,.22));--ge:inset 0 0 0 1.5px rgba(255,255,255,.85),inset 0 2px 3px rgba(255,255,255,.95),inset 0 -3px 6px rgba(255,255,255,.35),inset 3px 0 8px rgba(255,255,255,.25)}
+.glass,.chip,.tab,.ctl button,.btn.o,.hint,.cap,nav,#gal .gi{-webkit-backdrop-filter:blur(26px) saturate(210%) brightness(1.06);backdrop-filter:blur(26px) saturate(210%) brightness(1.06);-webkit-transform:translateZ(0);box-shadow:var(--ge),0 22px 50px rgba(40,50,110,.16)}
+.glass::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(115deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,0) 32%,rgba(255,255,255,0) 68%,rgba(255,255,255,.35) 100%)}
+.lkp{background:linear-gradient(135deg,rgba(255,255,255,.42),rgba(255,255,255,.14) 60%,rgba(255,255,255,.34))}.glass::after{opacity:.22}
+.pw{position:relative;animation:fl 7s ease-in-out infinite;will-change:transform}
+.pw img{display:block;width:100%;height:auto}
+.pw .pl,.pw .pr{position:absolute;left:0;top:0;width:100%;height:100%;will-change:transform}
+.pw .pe{-webkit-mask-image:linear-gradient(90deg,transparent 36%,#000 46%,#000 54%,transparent 64%);mask-image:linear-gradient(90deg,transparent 36%,#000 46%,#000 54%,transparent 64%)}
+.pw .pl{-webkit-mask-image:linear-gradient(90deg,#000 38%,transparent 56%);mask-image:linear-gradient(90deg,#000 38%,transparent 56%);transform-origin:62% 90%;animation:wl 5.2s ease-in-out infinite}
+.pw .pr{-webkit-mask-image:linear-gradient(90deg,transparent 44%,#000 62%);mask-image:linear-gradient(90deg,transparent 44%,#000 62%);transform-origin:38% 90%;animation:wr 6.1s ease-in-out infinite}
+@keyframes wl{0%,100%{transform:rotate(-2deg) scale(1)}50%{transform:rotate(1.5deg) scale(1.012)}}
+@keyframes wr{0%,100%{transform:rotate(1.9deg) scale(1)}50%{transform:rotate(-1.6deg) scale(1.012)}}
+@media (prefers-reduced-motion:reduce){.pw,.pw .pl,.pw .pr{animation:none}}
 </style>
 </head>
 <body>
@@ -117,7 +142,8 @@ html{scroll-behavior:smooth}
 <nav><div class="wrap"><div class="logo"><img src="2-logo-word.png" alt="Shagun Events" style="height:20px;width:auto;display:block"></div><div><a href="#about">About</a><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#view">360 View</a><a href="#contact">Contact</a></div></div></nav>
 
 <header class="hero wrap">
-  <div class="lk glass lkp" role="img" aria-label="Shagun Events - Creating the WOW factor in every event"><img class="pe" src="1-ol-peacock.png" alt="" width="1000" height="838"><img class="lt" src="2-ol-letters.png" alt="" width="1200" height="201"></div>
+  <div class="lk glass lkp" role="img" aria-label="Shagun Events - Creating the WOW factor in every event"><div class="pw"><img class="pe" src="1-ol-peacock.png" alt="" width="1000" height="838"><img class="pl" src="1-ol-peacock.png" alt="" aria-hidden="true"><img class="pr" src="1-ol-peacock.png" alt="" aria-hidden="true"></div><img class="lt" src="2-ol-letters.png" alt="" width="1200" height="201"></div>
+  <div class="eyebrow eyl">Shagun Events &middot; Weddings &middot; Celebrations &middot; Corporate</div>
   <h1>Creating the <em>&lsquo;WOW&rsquo; factor</em> in every event.</h1>
   <p class="lead">You are not just a client, you are family. We take care of every detail so your guests are in awe and you enjoy every moment.</p>
   <div class="btns"><a class="btn g" href="#contact" data-wa>Plan my event</a><a class="btn o" href="#services">What we handle</a></div>
@@ -244,7 +270,7 @@ var hi=document.querySelector(".heroimg");
 window.addEventListener("scroll",function(){var y=window.scrollY;if(hi&&y<900){hi.style.transform="translate3d(0,"+(y*.06)+"px,0)"}},{passive:true});
 document.querySelectorAll(".pk,.glass").forEach(function(c){c.addEventListener("pointermove",function(e){if(e.pointerType!=="mouse")return;var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform="translateY(-6px) perspective(700px) rotateY("+(x*5)+"deg) rotateX("+(-y*5)+"deg)"});c.addEventListener("pointerleave",function(){c.style.transform=""})});
 document.querySelectorAll(".glass").forEach(function(c){c.addEventListener("pointermove",function(e){var r=c.getBoundingClientRect();c.style.setProperty("--mx",(e.clientX-r.left)+"px");c.style.setProperty("--my",(e.clientY-r.top)+"px")})});
-var o=document.createElement("div");o.className="orbs";o.innerHTML="<i></i><i></i><i></i>";document.body.insertBefore(o,document.body.firstChild);
+var o=document.createElement("div");o.className="orbs";o.innerHTML="<i></i><i></i><i></i><i></i>";document.body.insertBefore(o,document.body.firstChild);
 var lb=document.getElementById("lb"),lbi=document.getElementById("lbi");
 document.querySelectorAll("#gal .gi").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();lbi.src=a.getAttribute("href");lb.classList.add("on")})});
 lb.addEventListener("click",function(){lb.classList.remove("on")});
