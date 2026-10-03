@@ -1,0 +1,20 @@
+{
+ "items": [
+  {
+   "id": "garland",
+   "name": "Flower garland",
+   "count": 24,
+   "sheet": "360-garland.jpg",
+   "cols": 6,
+   "rows": 4
+  },
+  {
+   "id": "stage",
+   "name": "Stage decor",
+   "count": 24,
+   "sheet": "360-stage.jpg",
+   "cols": 6,
+   "rows": 4
+  }
+ ]
+}
