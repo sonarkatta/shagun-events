@@ -58,6 +58,32 @@ footer{padding:34px 0 90px;text-align:center;color:var(--mut);font-size:13px;bor
 .wa svg{width:22px;height:22px}
 
 @media(max-width:600px){nav .wrap{justify-content:center}nav .logo{display:none}nav a{margin:0 9px;font-size:13.5px;white-space:nowrap}.hero h1{font-size:clamp(34px,10vw,46px)}}
+
+/* liquid glass */
+.orbs{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.orbs i{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;will-change:transform}
+.orbs i:nth-child(1){width:46vmax;height:46vmax;left:-14vmax;top:-12vmax;background:radial-gradient(circle,#7fd8de,transparent 65%);animation:o1 26s ease-in-out infinite alternate}
+.orbs i:nth-child(2){width:42vmax;height:42vmax;right:-14vmax;top:22vh;background:radial-gradient(circle,#b9a8ff,transparent 65%);animation:o2 32s ease-in-out infinite alternate}
+.orbs i:nth-child(3){width:40vmax;height:40vmax;left:12vw;bottom:-18vmax;background:radial-gradient(circle,#ffd9a0,transparent 65%);animation:o3 30s ease-in-out infinite alternate}
+@keyframes o1{to{transform:translate3d(14vw,10vh,0)}}
+@keyframes o2{to{transform:translate3d(-16vw,-8vh,0)}}
+@keyframes o3{to{transform:translate3d(10vw,-12vh,0)}}
+:root{--gl:linear-gradient(145deg,rgba(255,255,255,.62),rgba(255,255,255,.22));--ge:inset 0 1px 1px rgba(255,255,255,.9),inset 0 -1px 1px rgba(255,255,255,.35),inset 1px 0 1px rgba(255,255,255,.4)}
+.glass,.chip,.tab,.ctl button,.btn.o,.hint,.cap{background:var(--gl);-webkit-backdrop-filter:blur(22px) saturate(190%);backdrop-filter:blur(22px) saturate(190%);border:0;box-shadow:var(--ge),0 18px 44px rgba(30,40,80,.10)}
+.glass{position:relative;overflow:hidden}
+.glass::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(240px 160px at var(--mx,18%) var(--my,0%),rgba(255,255,255,.75),transparent 70%);opacity:.55;transition:opacity .3s}
+.glass:hover::after{opacity:.95}
+nav{position:sticky;top:10px;margin:10px auto 0;max-width:720px;width:calc(100% - 28px);border:0;border-radius:99px;background:var(--gl);-webkit-backdrop-filter:blur(24px) saturate(190%);backdrop-filter:blur(24px) saturate(190%);box-shadow:var(--ge),0 14px 40px rgba(30,40,80,.12)}
+nav .wrap{height:52px;padding:0 22px}
+.btn.g{background:linear-gradient(180deg,rgba(40,44,56,.92),rgba(11,13,18,.96));box-shadow:inset 0 1px 1px rgba(255,255,255,.35),0 12px 30px rgba(11,13,18,.22)}
+.tab.on{background:linear-gradient(180deg,rgba(40,44,56,.92),rgba(11,13,18,.96));box-shadow:inset 0 1px 1px rgba(255,255,255,.35)}
+.heroimg{border:0;box-shadow:var(--ge),0 30px 70px rgba(30,40,80,.18)}
+.cap{position:absolute;left:18px;bottom:18px;z-index:2;padding:10px 18px;border-radius:99px;font-size:13.5px;font-weight:600;color:var(--ink);background:linear-gradient(145deg,rgba(255,255,255,.7),rgba(255,255,255,.3))}
+#gal .gi{padding:6px;background:var(--gl);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);box-shadow:var(--ge),0 14px 36px rgba(30,40,80,.12);border-radius:26px}
+#gal .gi img{border-radius:20px}
+.stage{box-shadow:inset 0 0 0 1px rgba(255,255,255,.5)}
+footer{border-top:0}
+@media(max-width:600px){nav{width:calc(100% - 20px)}nav .wrap{padding:0 8px}}
 /* motion */
 html{scroll-behavior:smooth}
 .heroimg img{transform:scale(1.04);animation:kb 18s ease-in-out infinite alternate;will-change:transform}
@@ -100,11 +126,11 @@ html{scroll-behavior:smooth}
 </header>
 
 <section id="about"><div class="wrap">
-  <div class="glass" style="padding:34px;text-align:center">
-    <div class="eyebrow">About us</div>
-    <h2 style="font-size:clamp(26px,4vw,36px);margin:8px 0 14px">Your guests are our guests</h2>
-    <p class="lead" style="margin:0 auto 14px;max-width:700px">Our well-trained and passionate team makes every moment seamless, elegant and unforgettable, from the first impression to the final farewell.</p>
-    <p style="color:var(--mut);margin:0 auto;max-width:700px">For over two years we have been delivering excellence and redefining what it means to host extraordinary events.</p>
+  <div class="sh"><div class="eyebrow">About us</div><h2>Creating the &lsquo;WOW&rsquo; factor in every event</h2></div>
+  <div class="glass" style="padding:clamp(26px,5vw,48px);max-width:820px;margin:0 auto">
+    <p class="lead" style="margin:0 0 18px;max-width:none;color:var(--ink);font-size:20px">At SHAGUN, we believe the success of any event lies in the memories it creates. For us, you are not just clients &mdash; you are family, and we work with that mindset. We never compromise on a single detail because your satisfaction is our mission.</p>
+    <p style="color:var(--mut);margin:0 0 18px;font-size:17px">Your guests are our guests, and we treat them with the utmost care and hospitality. Our well-trained and passionate team ensures every moment is seamless, elegant, and unforgettable. From the first impression to the final farewell, we create experiences that leave your guests in awe and make your event truly exceptional.</p>
+    <p style="color:var(--mut);margin:0;font-size:17px">For over two years, we have been delivering excellence and redefining what it means to host extraordinary events. With SHAGUN, you&rsquo;re not just hosting an event &mdash; you&rsquo;re curating unforgettable moments that spark joy, excitement, and a sense of belonging. We bring the WOW factor that transforms any occasion into a magical experience, leaving every guest feeling like part of your family and ensuring your event is remembered for years to come.</p>
   </div>
 </div></section>
 
@@ -126,10 +152,10 @@ html{scroll-behavior:smooth}
 </div></section>
 
 <section id="view"><div class="wrap">
-  <div class="sh"><div class="eyebrow">Look closer</div><h2>See it from every side</h2><p>Drag to turn the decor around. On a phone, swipe sideways.</p></div>
+  <div class="sh"><div class="eyebrow">Look closer</div><h2>Look at every detail</h2><p>Drag to explore the decor. On a phone, swipe sideways.</p></div>
   <div class="glass v360">
     <div class="tabs" id="tabs"></div>
-    <div class="stage" id="stage"><div id="sp" style="position:absolute;inset:0;background-repeat:no-repeat"></div><img id="fr" alt="360 degree view" draggable="false"><div class="hint" id="hint">Drag to rotate</div></div>
+    <div class="stage" id="stage"><div id="sp" style="position:absolute;inset:0;background-repeat:no-repeat"></div><img id="fr" alt="360 degree view" draggable="false"><div class="hint" id="hint">Drag to explore</div></div>
     <div class="rail"><i id="rail"></i></div>
     <div class="ctl"><button id="auto">Pause</button><button id="prev">&#8592;</button><button id="next">&#8594;</button></div>
   </div>
@@ -177,7 +203,7 @@ var SITE={
 function waLink(){if(!SITE.whatsapp)return "#contact";return "https://wa.me/"+SITE.whatsapp+"?text="+encodeURIComponent(SITE.message)}
 document.querySelectorAll("[data-wa]").forEach(function(a){var l=waLink();a.href=l;if(l!="#contact"){a.target="_blank";a.rel="noopener"}else if(a.classList.contains("wa")){a.style.display="none"}});
 var h=document.getElementById("hero");
-if(SITE.hero.src){h.style.display="block";h.innerHTML=SITE.hero.type=="video"?'<video src="'+SITE.hero.src+'" autoplay muted loop playsinline></video>':'<img src="'+SITE.hero.src+'" alt="">'}
+if(SITE.hero.src){h.style.display="block";h.innerHTML=(SITE.hero.type=="video"?'<video src="'+SITE.hero.src+'" autoplay muted loop playsinline></video>':'<img src="'+SITE.hero.src+'" alt="">')+'<div class="cap">Weddings, celebrations and corporate events</div>'}
 document.getElementById("pk").innerHTML=SITE.services.map(function(p,i){return '<div class="glass pk"><div class="n">0'+(i+1)+'</div><h3>'+p[0]+'</h3><p style="color:var(--mut);margin:8px 0 0">'+p[1]+'</p></div>'}).join("");
 document.getElementById("gal").innerHTML=SITE.gallery.map(function(g){return '<a class="gi rv" href="'+g+'"><img src="'+g+'" alt="Event decor by Shagun Events" loading="lazy"></a>'}).join("");
 document.getElementById("ev").innerHTML=SITE.events.map(function(e){return '<span class="chip">'+e+'</span>'}).join("");
@@ -189,10 +215,11 @@ function url(i){return item.files?"360/"+item.id+"/"+item.files[i]:"360/"+item.i
 var sp=document.getElementById("sp");
 function show(){var n=item.count;pos=((pos%n)+n)%n;var i=Math.floor(pos);
  if(item.sheet){fr.style.display="none";sp.style.display="block";sp.style.backgroundImage="url("+item.sheet+")";sp.style.backgroundSize=(item.cols*100)+"% "+(item.rows*100)+"%";var c=i%item.cols,r=Math.floor(i/item.cols);sp.style.backgroundPosition=(item.cols>1?c/(item.cols-1)*100:0)+"% "+(item.rows>1?r/(item.rows-1)*100:0)+"%"}
- else{sp.style.display="none";fr.style.display="block";fr.src=imgs[i]&&imgs[i].complete?imgs[i].src:url(i)}
+ else if(item.still){sp.style.display="none";fr.style.display="block";if(fr.getAttribute("data-s")!==item.still){fr.src=item.still;fr.setAttribute("data-s",item.still)}fr.style.objectFit="cover";var t=pos/n,ph=t<.5?t*2:2-2*t,d=(ph-.5)*14;fr.style.transform="scale(1.22) translate"+(item.axis=="y"?"Y":"X")+"("+d+"%)"}
+ else{fr.style.objectFit="contain";fr.style.transform="";sp.style.display="none";fr.style.display="block";fr.removeAttribute("data-s");fr.src=imgs[i]&&imgs[i].complete?imgs[i].src:url(i)}
  rail.style.width=(i/(n-1)*100)+"%"}
-function load(it){item=it;imgs=[];if(it.sheet){var m=new Image();m.src=it.sheet}else for(var i=0;i<it.count;i++){var m=new Image();m.src=url(i);imgs.push(m)}pos=0;show();[].forEach.call(document.querySelectorAll(".tab"),function(t){t.classList.toggle("on",t.dataset.id==it.id)})}
-function tick(){clearInterval(tmr);tmr=setInterval(function(){if(auto&&!dragging){pos+=.35;show()}},60)}
+function load(it){item=it;imgs=[];if(it.sheet){var m=new Image();m.src=it.sheet}else if(it.still){var m=new Image();m.src=it.still}else for(var i=0;i<it.count;i++){var m=new Image();m.src=url(i);imgs.push(m)}pos=0;show();[].forEach.call(document.querySelectorAll(".tab"),function(t){t.classList.toggle("on",t.dataset.id==it.id)})}
+function tick(){clearInterval(tmr);tmr=setInterval(function(){if(auto&&!dragging){pos+=(item.still?.1:.35);show()}},60)}
 fetch("manifest.json?x="+Date.now()).then(function(r){return r.json()}).then(function(j){M=j;var t=document.getElementById("tabs");t.innerHTML=M.items.map(function(it){return '<button class="tab" data-id="'+it.id+'">'+it.name+'</button>'}).join("");[].forEach.call(t.children,function(b,k){b.onclick=function(){load(M.items[k])}});load(M.items[0]);tick()}).catch(function(){document.getElementById("view").style.display="none"});
 function setAuto(v){auto=v;auBtn.textContent=auto?"Pause":"Auto rotate"}
 st.addEventListener("pointerdown",function(e){dragging=true;sx=e.clientX;sp=pos;st.classList.add("drag");st.setPointerCapture(e.pointerId);hint.style.opacity=0;setAuto(false)});
@@ -217,6 +244,8 @@ else{var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.is
 var hi=document.querySelector(".heroimg");
 window.addEventListener("scroll",function(){var y=window.scrollY;if(hi&&y<900){hi.style.transform="translate3d(0,"+(y*.06)+"px,0)"}},{passive:true});
 document.querySelectorAll(".pk,.glass").forEach(function(c){c.addEventListener("pointermove",function(e){if(e.pointerType!=="mouse")return;var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform="translateY(-6px) perspective(700px) rotateY("+(x*5)+"deg) rotateX("+(-y*5)+"deg)"});c.addEventListener("pointerleave",function(){c.style.transform=""})});
+document.querySelectorAll(".glass").forEach(function(c){c.addEventListener("pointermove",function(e){var r=c.getBoundingClientRect();c.style.setProperty("--mx",(e.clientX-r.left)+"px");c.style.setProperty("--my",(e.clientY-r.top)+"px")})});
+var o=document.createElement("div");o.className="orbs";o.innerHTML="<i></i><i></i><i></i>";document.body.insertBefore(o,document.body.firstChild);
 var lb=document.getElementById("lb"),lbi=document.getElementById("lbi");
 document.querySelectorAll("#gal .gi").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();lbi.src=a.getAttribute("href");lb.classList.add("on")})});
 lb.addEventListener("click",function(){lb.classList.remove("on")});
