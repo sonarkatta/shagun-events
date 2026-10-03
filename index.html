@@ -28,6 +28,9 @@ h1 em{font-style:normal;background:linear-gradient(180deg,#f7dc96,#c9951c);-webk
 .btn.g{color:#1a1206;background:linear-gradient(180deg,#f7dc96,#c9951c);box-shadow:0 10px 28px rgba(201,149,28,.3)}
 .btn.o{color:var(--gold);background:rgba(255,255,255,.04);border:1px solid var(--line)}
 .glass{position:relative;border-radius:28px;background:linear-gradient(145deg,rgba(255,255,255,.1),rgba(255,255,255,.03));border:1px solid var(--line);box-shadow:0 18px 44px rgba(0,0,0,.4);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.emb{width:min(230px,52vw);height:auto;display:block;margin:0 auto 16px;filter:drop-shadow(0 10px 40px rgba(236,201,120,.18))}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:24px}.chip{border:1px solid var(--line);background:rgba(255,255,255,.04);border-radius:99px;padding:9px 18px;font-size:14px;color:var(--ink)}
+.pk .n{color:var(--gold);font-weight:700;font-size:13px;letter-spacing:2px}
 .heroimg{margin:46px auto 0;aspect-ratio:16/8;border-radius:28px;overflow:hidden;position:relative;background:linear-gradient(135deg,#1c160c,#0e0b07);border:1px solid var(--line)}
 .heroimg img,.heroimg video{width:100%;height:100%;object-fit:cover;display:block}
 .heroimg .ph{position:absolute;inset:0;display:grid;place-items:center;color:var(--mut);font-size:14px;letter-spacing:1px}
@@ -63,81 +66,97 @@ footer{padding:34px 0 90px;text-align:center;color:var(--mut);font-size:13px;bor
 </head>
 <body>
 <div class="bg"></div>
-<nav><div class="wrap"><div class="logo">Shagun <span>Events</span></div><div><a href="#services">Services</a><a href="#view">360 View</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a></div></div></nav>
+<nav><div class="wrap"><div class="logo">SHAGUN <span>EVENTS</span></div><div><a href="#about">About</a><a href="#services">Services</a><a href="#view">360 View</a><a href="#contact">Contact</a></div></div></nav>
 
 <header class="hero wrap">
-  <div class="eyebrow">Weddings &middot; Celebrations &middot; Corporate</div>
-  <h1>Celebrations, <em>beautifully</em> done.</h1>
-  <p class="lead">From the first garland to the last light, we design and run your event so you can enjoy every moment.</p>
-  <div class="btns"><a class="btn g" href="#contact" data-wa>Plan my event</a><a class="btn o" href="#view">See our decor in 360</a></div>
-  <div class="heroimg" id="hero"><div class="ph">Event photo or video goes here</div></div>
+  <img class="emb" src="logo.png" alt="Shagun Events peacock emblem" width="230" height="222">
+  <div class="eyebrow">Shagun Events &amp; Coordinators</div>
+  <h1>Creating the <em>&lsquo;WOW&rsquo; factor</em> in every event.</h1>
+  <p class="lead">You are not just a client, you are family. We take care of every detail so your guests are in awe and you enjoy every moment.</p>
+  <div class="btns"><a class="btn g" href="#contact" data-wa>Plan my event</a><a class="btn o" href="#services">What we handle</a></div>
+  <div class="heroimg" id="hero" style="display:none"></div>
 </header>
 
+<section id="about"><div class="wrap">
+  <div class="glass" style="padding:34px;text-align:center">
+    <div class="eyebrow">About us</div>
+    <h2 style="font-size:clamp(26px,4vw,36px);margin:8px 0 14px">Your guests are our guests</h2>
+    <p class="lead" style="margin:0 auto 14px;max-width:700px">Our well-trained and passionate team makes every moment seamless, elegant and unforgettable, from the first impression to the final farewell.</p>
+    <p style="color:var(--mut);margin:0 auto;max-width:700px">For over two years we have been delivering excellence and redefining what it means to host extraordinary events.</p>
+  </div>
+</div></section>
+
 <section id="services"><div class="wrap">
-  <div class="sh"><div class="eyebrow">What we do</div><h2>Services and packages</h2><p>Choose a package or tell us what you have in mind. Every event is planned around you.</p></div>
+  <div class="sh"><div class="eyebrow">Our excellence</div><h2>Everything your event needs</h2><p>One team, from the first plan to the last guest.</p></div>
   <div class="grid" id="pk"></div>
+  <div class="sh" style="margin-top:56px"><div class="eyebrow">Events we run</div><h2>Every kind of celebration</h2></div>
+  <div class="chips" id="ev"></div>
 </div></section>
 
 <section id="view"><div class="wrap">
   <div class="sh"><div class="eyebrow">Look closer</div><h2>See it from every side</h2><p>Drag to turn the decor around. On a phone, swipe sideways.</p></div>
   <div class="glass v360">
     <div class="tabs" id="tabs"></div>
-    <div class="stage" id="stage"><img id="fr" alt="360 degree view" draggable="false"><div class="hint" id="hint">Drag to rotate</div></div>
+    <div class="stage" id="stage"><div id="sp" style="position:absolute;inset:0;background-repeat:no-repeat"></div><img id="fr" alt="360 degree view" draggable="false"><div class="hint" id="hint">Drag to rotate</div></div>
     <div class="rail"><i id="rail"></i></div>
     <div class="ctl"><button id="auto">Pause</button><button id="prev">&#8592;</button><button id="next">&#8594;</button></div>
   </div>
-</div></section>
-
-<section id="reviews"><div class="wrap">
-  <div class="sh"><div class="eyebrow">Kind words</div><h2>What our clients say</h2></div>
-  <div class="grid" id="rv"></div>
 </div></section>
 
 <section id="contact"><div class="wrap">
   <div class="glass contact">
     <div class="eyebrow">Let us talk</div>
     <h2 style="font-size:34px;margin:8px 0 10px">Tell us about your event</h2>
-    <p class="lead" style="margin-bottom:22px">Date, place, guests and ideas. We reply on WhatsApp.</p>
-    <a class="btn g" data-wa href="#">Chat on WhatsApp</a>
+    <p class="lead" style="margin-bottom:22px">Date, place, guests and ideas. We will get back to you.</p>
+    <div class="btns"><a class="btn g" data-wa href="#">Chat on WhatsApp</a><a class="btn o" id="call" href="#">Call us</a></div>
+    <p style="margin:24px 0 0;color:var(--mut)"><a style="color:var(--gold);text-decoration:none" href="mailto:sshagunevents@gmail.com">sshagunevents@gmail.com</a><br><span id="ph"></span></p>
   </div>
 </div></section>
 
-<footer><div class="wrap">&copy; Shagun Events</div></footer>
+<footer><div class="wrap">&copy; Shagun Events &amp; Coordinators</div></footer>
 <a class="wa" data-wa href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.2.4-.2.6-.1l1.9.9c.3.1.5.2.5.4.1.2.1.8-.1 1.4z"/></svg>WhatsApp</a>
 
 <script>
 /* ---- Edit this block with the real business details ---- */
 var SITE={
- whatsapp:"",            /* digits only with country code, e.g. 919876543210. Empty = button shows "coming soon" */
+ whatsapp:"",            /* digits with country code, e.g. 918767612346. Empty until the owner confirms which number is on WhatsApp */
+ phones:["8767612346","8669348000"],
  message:"Hello Shagun Events, I would like to plan an event.",
- hero:{type:"",src:""},  /* type "image" or "video"; src like "media/hero.jpg" */
- packages:[
-  {tag:"Package",name:"Wedding",items:["Stage and entrance decor","Flower garlands and floral design","Lighting and sound","On-day coordination"]},
-  {tag:"Package",name:"Engagement and Ceremonies",items:["Themed stage setup","Floral arrangements","Photo corner","Guest seating and styling"]},
-  {tag:"Package",name:"Corporate and Private",items:["Branded stage and backdrops","Lighting and AV support","Welcome and registration area","Full event management"]}
+ hero:{type:"",src:""},  /* later: type "image" or "video", src like "media/hero.jpg" */
+ services:[
+  ["Hospitality","Exceptional guest care and a seamless experience, treating every guest like family."],
+  ["Food & Beverages","Customised menus with quality service, catering to every dietary need."],
+  ["RSVP","Guest communication and confirmations, personal follow-ups, real-time guest lists, seating and dietary requests."],
+  ["Logistics","Timely transport, efficient setup and flawless coordination."],
+  ["Shadowing","Continuous event oversight, so everything runs smoothly and on time."],
+  ["Overall Coordination","Complete management with clear communication, so no detail is missed."],
+  ["Artist Management","Professional handling of artists and performers for smooth performances."],
+  ["Event Running","Precise event flow, with real-time adjustments for a seamless experience."]
  ],
- reviews:[
-  {name:"Client name",place:"Event type, city",text:"Your real client review goes here."},
-  {name:"Client name",place:"Event type, city",text:"Your real client review goes here."},
-  {name:"Client name",place:"Event type, city",text:"Your real client review goes here."}
- ]
+ events:["Weddings","Sports Events","Corporate Events","Cultural Events","Social Gatherings","Charity Events","Festivals","Product Launches","Exhibitions & Trade Shows","Private Parties","Religious Ceremonies","Concerts & Award Ceremonies"]
 };
 /* -------------------------------------------------------- */
 function waLink(){if(!SITE.whatsapp)return "#contact";return "https://wa.me/"+SITE.whatsapp+"?text="+encodeURIComponent(SITE.message)}
-document.querySelectorAll("[data-wa]").forEach(function(a){var l=waLink();a.href=l;if(l!="#contact"){a.target="_blank";a.rel="noopener"}else if(a.textContent.indexOf("WhatsApp")>-1){a.textContent=a.classList.contains("wa")?a.textContent:"WhatsApp number coming soon"}});
+document.querySelectorAll("[data-wa]").forEach(function(a){var l=waLink();a.href=l;if(l!="#contact"){a.target="_blank";a.rel="noopener"}else if(a.classList.contains("wa")){a.style.display="none"}});
 var h=document.getElementById("hero");
-if(SITE.hero.src){h.innerHTML=SITE.hero.type=="video"?'<video src="'+SITE.hero.src+'" autoplay muted loop playsinline></video>':'<img src="'+SITE.hero.src+'" alt="">'}
-document.getElementById("pk").innerHTML=SITE.packages.map(function(p){return '<div class="glass pk"><div class="tag">'+p.tag+'</div><h3>'+p.name+'</h3><ul>'+p.items.map(function(i){return"<li>"+i+"</li>"}).join("")+'</ul></div>'}).join("");
-document.getElementById("rv").innerHTML=SITE.reviews.map(function(r){return '<div class="glass rv"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>'+r.text+'</p><b>'+r.name+'</b><small>'+r.place+'</small></div>'}).join("");
+if(SITE.hero.src){h.style.display="block";h.innerHTML=SITE.hero.type=="video"?'<video src="'+SITE.hero.src+'" autoplay muted loop playsinline></video>':'<img src="'+SITE.hero.src+'" alt="">'}
+document.getElementById("pk").innerHTML=SITE.services.map(function(p,i){return '<div class="glass pk"><div class="n">0'+(i+1)+'</div><h3>'+p[0]+'</h3><p style="color:var(--mut);margin:8px 0 0">'+p[1]+'</p></div>'}).join("");
+document.getElementById("ev").innerHTML=SITE.events.map(function(e){return '<span class="chip">'+e+'</span>'}).join("");
+document.getElementById("call").href="tel:+91"+SITE.phones[0];
+document.getElementById("ph").innerHTML=SITE.phones.map(function(p){return '<a style="color:var(--ink);text-decoration:none" href="tel:+91'+p+'">+91 '+p+'</a>'}).join(" &nbsp;&middot;&nbsp; ");
 
 /* ---- 360 viewer: a folder of photos per item, listed in 360/manifest.json ---- */
 var M=null,item=null,imgs=[],pos=0,auto=true,tmr=null,dragging=false,sx=0,sp=0;
 var fr=document.getElementById("fr"),st=document.getElementById("stage"),rail=document.getElementById("rail"),hint=document.getElementById("hint"),auBtn=document.getElementById("auto");
-function url(i){return "360/"+item.id+"/"+("0"+(i+1)).slice(-2)+"."+item.ext}
-function show(){var n=item.count;pos=((pos%n)+n)%n;var i=Math.floor(pos);fr.src=imgs[i]&&imgs[i].complete?imgs[i].src:url(i);rail.style.width=(i/(n-1)*100)+"%"}
-function load(it){item=it;imgs=[];for(var i=0;i<it.count;i++){var m=new Image();m.src=url(i);imgs.push(m)}pos=0;show();[].forEach.call(document.querySelectorAll(".tab"),function(t){t.classList.toggle("on",t.dataset.id==it.id)})}
+function url(i){return item.files?"360/"+item.id+"/"+item.files[i]:"360/"+item.id+"/"+("0"+(i+1)).slice(-2)+"."+(item.ext||"jpg")}
+var sp=document.getElementById("sp");
+function show(){var n=item.count;pos=((pos%n)+n)%n;var i=Math.floor(pos);
+ if(item.sheet){fr.style.display="none";sp.style.display="block";sp.style.backgroundImage="url("+item.sheet+")";sp.style.backgroundSize=(item.cols*100)+"% "+(item.rows*100)+"%";var c=i%item.cols,r=Math.floor(i/item.cols);sp.style.backgroundPosition=(item.cols>1?c/(item.cols-1)*100:0)+"% "+(item.rows>1?r/(item.rows-1)*100:0)+"%"}
+ else{sp.style.display="none";fr.style.display="block";fr.src=imgs[i]&&imgs[i].complete?imgs[i].src:url(i)}
+ rail.style.width=(i/(n-1)*100)+"%"}
+function load(it){item=it;imgs=[];if(it.sheet){var m=new Image();m.src=it.sheet}else for(var i=0;i<it.count;i++){var m=new Image();m.src=url(i);imgs.push(m)}pos=0;show();[].forEach.call(document.querySelectorAll(".tab"),function(t){t.classList.toggle("on",t.dataset.id==it.id)})}
 function tick(){clearInterval(tmr);tmr=setInterval(function(){if(auto&&!dragging){pos+=.35;show()}},60)}
-fetch("360/manifest.json?x="+Date.now()).then(function(r){return r.json()}).then(function(j){M=j;var t=document.getElementById("tabs");t.innerHTML=M.items.map(function(it){return '<button class="tab" data-id="'+it.id+'">'+it.name+'</button>'}).join("");[].forEach.call(t.children,function(b,k){b.onclick=function(){load(M.items[k])}});load(M.items[0]);tick()}).catch(function(){document.getElementById("view").style.display="none"});
+fetch("manifest.json?x="+Date.now()).then(function(r){return r.json()}).then(function(j){M=j;var t=document.getElementById("tabs");t.innerHTML=M.items.map(function(it){return '<button class="tab" data-id="'+it.id+'">'+it.name+'</button>'}).join("");[].forEach.call(t.children,function(b,k){b.onclick=function(){load(M.items[k])}});load(M.items[0]);tick()}).catch(function(){document.getElementById("view").style.display="none"});
 function setAuto(v){auto=v;auBtn.textContent=auto?"Pause":"Auto rotate"}
 st.addEventListener("pointerdown",function(e){dragging=true;sx=e.clientX;sp=pos;st.classList.add("drag");st.setPointerCapture(e.pointerId);hint.style.opacity=0;setAuto(false)});
 st.addEventListener("pointermove",function(e){if(!dragging)return;var w=st.clientWidth;pos=sp-((e.clientX-sx)/w)*item.count*1.2;show()});
