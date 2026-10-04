@@ -9,14 +9,6 @@
    "rows": 4
   },
   {
-   "id": "stage",
-   "name": "Stage decor",
-   "count": 24,
-   "sheet": "2-360-stage-light.jpg",
-   "cols": 6,
-   "rows": 4
-  },
-  {
    "id": "garland3d",
    "name": "Garland 3D",
    "count": 36,
