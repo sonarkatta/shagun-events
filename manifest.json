@@ -1,1 +1,68 @@
-{"items":[]}
+{
+ "items": [
+  {
+   "id": "garland",
+   "name": "Flower garland",
+   "count": 24,
+   "sheet": "1-360-garland-light.jpg",
+   "cols": 6,
+   "rows": 4
+  },
+  {
+   "id": "garland3d",
+   "name": "Garland 3D",
+   "count": 36,
+   "sheet": "1-sk-garland-ai6.webp?v=32",
+   "cols": 8,
+   "rows": 5,
+   "aspect": "4/5",
+   "ai": true,
+   "hi": [
+    "1-hi1.webp?v=1",
+    "2-hi2.webp?v=1"
+   ]
+  },
+  {
+   "id": "g1",
+   "name": "Red rose and jasmine garland",
+   "sheet": "1-1-sk-g1.webp?v=1",
+   "count": 36,
+   "cols": 8,
+   "rows": 5,
+   "aspect": "4/5",
+   "ai": true,
+   "hi": [
+    "1-hi-g1-1.webp?v=1",
+    "2-hi-g1-2.webp?v=1"
+   ]
+  },
+  {
+   "id": "g2",
+   "name": "Pink and red rose garland",
+   "sheet": "2-2-sk-g2.webp?v=1",
+   "count": 36,
+   "cols": 8,
+   "rows": 5,
+   "aspect": "4/5",
+   "ai": true,
+   "hi": [
+    "3-hi-g2-1.webp?v=1",
+    "4-hi-g2-2.webp?v=1"
+   ]
+  },
+  {
+   "id": "g3",
+   "name": "Cream and blush rose garland",
+   "sheet": "3-3-sk-g3.webp?v=1",
+   "count": 36,
+   "cols": 8,
+   "rows": 5,
+   "aspect": "4/5",
+   "ai": true,
+   "hi": [
+    "5-hi-g3-1.webp?v=1",
+    "6-hi-g3-2.webp?v=1"
+   ]
+  }
+ ]
+}
